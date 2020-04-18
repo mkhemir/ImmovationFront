@@ -1,28 +1,132 @@
 .position2 {
+  position: absolute; 
+  top: 317px; 
+  width: 604px;
+  height: 303px;
+}
+
+.position3 {
+  position: absolute;
+  top: 460px; 
+  left: 59px;
+  width: 553px;
+}
+
+.position4 {
+  position: absolute; 
+  width: 82px; 
+  height: 27px;
+}
+
+.position5 {
+  position: absolute;
+  top: 26px;
+}
+
+.position6 {
+  position: absolute;
+  top: 540px; 
+  left: 386px;
+  width: 553px;
+}
+
+.position7 {
   position:absolute;
   top:322px;
 }
 
-.position3 {
+.position8 {
   position:absolute;
   top:448px;
   width:415px;
   left:150px;
 }
 
-.position4 {
+.position9 {
   position:absolute;
   top:639px;
   width:128px;
   height:40px;
 }
 
-.position5 {
+.position10 {
   position:absolute;
   width:193.5px;
   height: 8px;
   top: 909px;
 }
+
+.position11 {
+  width: calc(100% - 96px);
+  position: absolute; 
+  margin: 42px 48px auto 48px;
+}
+
+.position12 {
+  position: absolute;
+  width: 100%;
+}
+
+.position13 {
+  width: calc(100% - 56px);
+  position: absolute; 
+  margin: 24px 28px auto 28px;
+}
+
+.position14 {
+  position: absolute;
+  top: 80px;
+}
+
+.position15 {
+  position: absolute;
+  top: 196px; 
+  left: 12px;
+  width: 100%;
+  padding-left: 16px;
+}
+
+.position16 {
+  position: absolute; 
+  left: 416px;
+}
+
+.position17 {
+  position: absolute;
+  top: 375px; 
+  width: 100%;
+}
+
+.dimension1 {
+  width: 274px;
+  height: 48px;
+}
+
+.dimension2 {
+  width: 182px;
+  height: 48px;
+}
+
+.dimension3 {
+  width: 96px;
+  height: 48px;
+}
+
+.dimension4 {
+  width: 255px;
+  height: 40px;
+}
+
+.dimension5 {
+  width: 165px; 
+  height: 40px;
+}
+
+
+
+
+
+
 
 .arrow {
   border: solid black;
@@ -168,17 +272,6 @@ input[type=range]::-ms-thumb {
   top: 184px; 
 }
 
-.position6 {
-  width: calc(100% - 96px);
-  position: absolute; 
-  margin: 42px 48px auto 48px;
-}
-
-.position7 {
-  width: calc(100% - 56px);
-  position: absolute; 
-  margin: 24px 28px auto 28px;
-}
 
 ol > li:not(:last-child) { 
   margin-bottom: 26px; 

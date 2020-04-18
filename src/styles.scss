@@ -202,11 +202,43 @@
 	font-weight: 400;
 	font-size: 120px;
 	color: #FFFFFF;
+	letter-spacing: 1.14px;
 }
 
 /*** fontes appliquées FIN ****/
 
 /*** HomePage DEBUT *****/
+
+.width1366 {
+  width: 1366px;
+}
+
+.width100percent {
+  width: 100%;
+}
+
+.width255 {
+  width: 255px;
+}
+
+.border1 {
+	border: 1px solid black;
+}
+
+.border2 {
+	border: 1px solid white;
+	border-radius : 4px 4px 0px 0px;
+}
+
+.border3 {
+	border: 1px solid white;
+	border-right: 1px solid #372300;
+	border-radius : 0px 0px 0px 4px;
+}
+
+.border4 {
+	border: 1px solid white;
+}
 
 .textAlignCenter {
   text-align: center;
@@ -228,8 +260,24 @@
   background: #F1F1F1 0% 0% no-repeat padding-box;  
 }
 
+.backgroundwhite {
+	background-color: white;
+}
+
+.height40 {
+	height: 40px;
+}
+
 .lineHeight40 {
   line-height: 40px;
+}
+
+.lineHeight48 {
+  line-height: 40px;
+}
+
+.lineHeight117 {
+	line-height: 117px;
 }
 
 .displayInlineBlock {
@@ -285,8 +333,32 @@
   white-space: nowrap;
 }
 
+.cursorpointer {
+	cursor: pointer;
+}
+
+.marginBottom0 {
+	margin-bottom: 0px;
+}
+
+.marginBottom13 {
+	margin-bottom: 13px;
+}
+
+.marginBottom14 {
+	margin-bottom: 14px;
+}
+
+.marginBottom30 {
+	margin-bottom: 30px;
+}
+
 .marginBottom34 {
 	margin-bottom: 34px;
+}
+
+.marginBottom44 {
+	margin-bottom: 44px;
 }
 
 .paddingLeft12 {
