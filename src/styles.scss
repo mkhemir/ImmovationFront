@@ -1,1 +1,312 @@
 /* You can add global styles to this file, and also import other style files */
+/**  import css bootstrap **/
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+/*** import des fontes DEBUT ****/
+
+@font-face {
+  font-family: Poppins;
+  font-weight: 400;
+  font-style: normal;
+  src: url("assets/font/Poppins-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: normal;
+  src: url("assets/font/Poppins-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-weight: 700;
+  font-style: normal;
+  src: url(assets/font/Poppins-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-weight: 800;
+  font-style: normal;
+  src: url(assets/font/Poppins-ExtraBold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-weight: 900;
+  font-style: normal;
+  src: url(assets/font/Poppins-Black.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'Pinyon Script';
+  font-weight: 400;
+  font-style: normal;
+  src: url(assets/font/PinyonScript-Regular.ttf) format("opentype");
+}
+
+/*** import des fontes FIN ****/
+
+/*** fontes appliquées DEBUT ****/
+
+.poppinsregular10diese000000 {
+	font-family: Poppins;
+	font-weight: 400;
+	font-size: 10px;
+	color: #000000;
+}
+
+.poppinsregular12diese171717DE {
+	font-family: Poppins;
+	font-weight: 400;
+	font-size: 12px;
+	color: #171717DE;
+}
+
+.poppinsregular14diese171717DE {
+	font-family: Poppins;
+	font-weight: 400;
+	font-size: 14px;
+	color: #171717DE;
+}
+
+.poppinsregular14diese000000 {
+	font-family: Poppins;
+	font-weight: 400;
+	font-size: 14px;
+	color: #000000;
+}
+
+.poppinsregular14diese00000061 {
+	font-family: Poppins;
+	font-weight: 400;
+	font-size: 14px;
+	color: #00000061;
+}
+
+.poppinsregular14diese372300 {
+	font-family: Poppins;
+	font-weight: 400;
+	font-size: 14px;
+	color: #372300;
+}
+
+.poppinsregular14dieseFFFFFF {
+	font-family: Poppins;
+	font-weight: 400;
+	font-size: 14px;
+	color: #FFFFFF;
+}
+
+.poppinsregular16diese000000 {
+	font-family: Poppins;
+	font-weight: 400;
+	font-size: 16px;
+	color: #000000;
+}
+
+.poppinsregular16diese372300 {
+	font-family: Poppins;
+	font-weight: 400;
+	font-size: 16px;
+	color: #372300;
+}
+
+.poppinsmedium12dieseECB605 {
+	font-family: Poppins;
+	font-weight: 500;
+	font-size: 12px;
+	color: #ECB605;
+}
+
+.poppinsbold12diese372300 {
+	font-family: Poppins;
+	font-weight: 700;
+	font-size: 12px;
+	color: #372300;
+}
+
+.poppinsbold12dieseECB605 {
+	font-family: Poppins;
+	font-weight: 700;
+	font-size: 12px;
+	color: #ECB605;
+}
+
+.poppinsbold14diese000000 {
+	font-family: Poppins;
+	font-weight: 700;
+	font-size: 14px;
+	color: #000000;
+}
+
+.poppinsbold19diese1C1200 {
+	font-family: Poppins;
+	font-weight: 700;
+	font-size: 19px;
+	color: #1C1200;
+}
+
+.poppinsextrabold14diese2F4E4E {
+	font-family: Poppins;
+	font-weight: 800;
+	font-size: 14px;
+	color: #2F4E4E;
+}
+
+.poppinsextrabold14diese372300 {
+	font-family: Poppins;
+	font-weight: 800;
+	font-size: 14px;
+	color: #372300;
+}
+
+.poppinsextrabold14dieseFFFFFFDE {
+	font-family: Poppins;
+	font-weight: 800;
+	font-size: 14px;
+	color: #FFFFFFDE;
+}
+
+.poppinsextrabold16diese171717DE {
+	font-family: Poppins;
+	font-weight: 800;
+	font-size: 16px;
+	color: #171717DE;
+}
+
+.poppinsblack14diese171717DE {
+	font-family: Poppins;
+	font-weight: 900;
+	font-size: 14px;
+	color: #171717DE;
+}
+
+.pinyonscriptregular64diese372300 {
+	font-family: Pinyon Script;
+	font-weight: 400;
+	font-size: 64px;
+	color: #372300;
+}
+
+.pinyonscript64diese372300 {
+	font-size: 64px;
+	font-weight:400;
+	font-family: 'Pinyon Script';
+	letter-spacing: 0.61px;
+	color: #372300;
+}
+
+.pinyonscriptregular120dieseFFFFFF {
+	font-family: 'Pinyon Script';
+	font-weight: 400;
+	font-size: 120px;
+	color: #FFFFFF;
+}
+
+/*** fontes appliquées FIN ****/
+
+/*** HomePage DEBUT *****/
+
+.textAlignCenter {
+  text-align: center;
+}
+
+.floatLeft {
+  float: left;
+}
+
+.floatRight {
+  float: right;
+}
+
+.backgroundPrimary {
+	background-color: #ECB608;
+}
+
+.backgroundLost {
+  background: #F1F1F1 0% 0% no-repeat padding-box;  
+}
+
+.lineHeight40 {
+  line-height: 40px;
+}
+
+.displayInlineBlock {
+  display: inline-block;
+}
+
+
+
+.vertical-center {
+  margin: 0;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.horizontal-center {
+  margin: 0;
+  left: 50%;
+  -ms-transform: translate(-50%, -0%);
+  transform: translate(-50%, -0%);
+}
+
+.horizontal-vertical-center {
+  margin: 0;
+  left: 50%;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.positionabsolute {
+  position: absolute;
+}
+
+.whitespacenowrap {
+  white-space: nowrap;
+}
+
+.btn1 {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.marginBottom34 {
+	margin-bottom: 34px;
+}
+
+.paddingLeft12 {
+	padding-left: 12px;
+}
+
+.paddingLeft50 {
+	padding-left: 50px;
+}
+
+.backgrounddieseF1F1F1 {
+	background-color: #F1F1F1
+}
+
+.backgrounddieseF8F8F8 {
+	background-color: #F8F8F8
+}
+
+.textdecorationunderline {
+	text-decoration: underline;
+}
+
+/*** HomePage FIN *****/
