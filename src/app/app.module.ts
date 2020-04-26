@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductLightComponent } from './product-light/product-light.component';
 
 registerLocaleData(localeFr, 'fr');
 declare var $: any;
@@ -23,7 +24,8 @@ console.log(`jQuery version: ${$.fn.jquery}`);
     HomePageComponent,
     ListProduitImmobilierComponent,
     ProduitImmobilierDetailsComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductLightComponent
   ],
   imports: [
     BrowserModule,

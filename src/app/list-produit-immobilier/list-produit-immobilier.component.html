@@ -1,1 +1,9 @@
 <p>list-produit-immobilier works!</p>
+<app-product-light></app-product-light>
+
+<div
+  fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+  <ng-container *ngFor="let _ of [1,2,3,4,5,6]">
+    <app-product-light fxFlex="0 1 calc(33.3% - 32px)"></app-product-light>
+  </ng-container>
+</div>
