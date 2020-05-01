@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonService } from '../common.service';
 
 @Component({
@@ -9,6 +9,15 @@ import { CommonService } from '../common.service';
 export class HeaderComponent implements OnInit {
 
   public color: string;
+
+  public size: number = document.documentElement.clientWidth;
+  public innersize: number = window.innerWidth;
+
+    @HostListener('window:resize', ['$event'])
+    onResize() {
+      this.size = document.documentElement.clientWidth;
+      this.innersize = window.innerWidth;
+    }
 
   constructor(private commonService: CommonService) { }
 

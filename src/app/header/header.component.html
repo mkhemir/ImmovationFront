@@ -1,6 +1,19 @@
-<div class="header" style="width: 1366px;">
-	<span [style.color]="color" [style.text-transform]="color === 'white' ? 'lowercase': 'uppercase'" class="poppinsbold19diese1C1200 btn1" style="left:32px;z-index: 1;">MALISIMMO</span>
-	<button [style.color]="color" class="poppinsextrabold14diese2F4E4E btn1" style="left:1046px;z-index: 1;">Buy</button>
-	<button [style.color]="color" class="poppinsextrabold14diese2F4E4E btn1" style="left:1126px;z-index: 1;">About Us</button>
-	<button class="poppinsbold12diese372300 position1 backgroundPrimary" style="z-index: 1;">SIGN IN</button>
+<div class="header" >
+	<span [style.color]="'Chartreuse'" style="z-index: 2;">client width (without scrollbar): {{size}}</span> / <span [style.color]="'Chartreuse'" style="z-index: 2;">inner width (with scrollbar): {{innersize}}</span>
+	<!--<span [style.color]="color" [style.text-transform]="color === 'white' ? 'lowercase': 'uppercase'" class="position1 poppinsbold19diese1C1200 btn1">MALISIMMO</span>-->
+	<div class="position2 w-nav-menu" style=" ">
+		<button [style.color]="color" class="position3 poppinsextrabold14diese2F4E4E btn1">Buy</button>
+		<button [style.color]="color" class="position4 poppinsextrabold14diese2F4E4E btn1">About Us</button>
+		<button class="poppinsbold12diese372300 position5 backgroundPrimary">SIGN IN</button>
+	</div>
+	<div class="position6 w-nav-button">
+		<div >
+			<img src="../../assets/images/190-menu.svg" alt="un menu" height="32px" width="32px" />
+			<svg width="32px" height="32px" viewBox="0 0 32 32" 
+				xmlns="http://www.w3.org/2000/svg" 
+				xmlns:xlink="http://www.w3.org/1999/xlink"> 	 		
+			<image xlink:href="../../assets/images/190-menu.svg" x="0" y="0" height="32" width="32"/>  	
+			</svg>			
+		</div>
+	</div> 
 </div>

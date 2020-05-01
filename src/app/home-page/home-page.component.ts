@@ -1,8 +1,9 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from '../common.service';
 import { ProduitImmobilierDTO } from '../produit-immobilier-dto';
 
+//declare var $:JQueryStatic;
 
 @Component({
   selector: 'app-home-page',
@@ -19,6 +20,17 @@ export class HomePageComponent implements OnInit, AfterViewInit {
   public annonce: ProduitImmobilierDTO = new ProduitImmobilierDTO(0, 'Flat', '0622136822', 'Pug flexitarian viral cliche pour-over. Banjo tote bag vinyl, lumbersexual 8-bit fam +1 chicharrones disrupt artisan vice activated charcoal offal succulents. Cornhole lyft williamsburg waistcoat put a bird on it banjo sriracha iceland snackwave keffiyeh kinfolk. Bespoke drinking vinegar mixtape hexagon DIY viral kitsch ramps poutine four dollar toast food truck ethical venmo keffiyeh.', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 'S', 'A', 1, 1, 2, 1, 1, 1, 1, 1, 1, '10', 1, 1, '18th district', '75018', 'Paris', 'A', 690000, 190, 1, 1, 1, 1, 1, 1, 1, 'V', 1);
 
   public color = 'white';
+
+  // @HostListener('window:resize', ['$event'])
+  //   onResize() {
+  //     let homePageImage5With = $('#homePageImage5').width();
+  //     let newTop = 184 - (184 - homePageImage5With * (184/649));
+  //     let innersize = window.innerWidth;
+  //     if (innersize >= 480 && innersize <= 690) {
+  //       console.log('newTop='+newTop);
+  //       $("#homePageCard1").css({ top: newTop + 'px' });
+  //     }
+  //   }
 
   constructor(private formBuilder: FormBuilder, private commonService: CommonService) { }
 
