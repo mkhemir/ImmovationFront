@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ProduitImmobilierDTO} from '../models/produit-immobilier-dto';
 
 @Component({
   selector: 'app-product-light',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-light.component.scss']
 })
 export class ProductLightComponent implements OnInit {
-
+   @Input() produit: ProduitImmobilierDTO;
   constructor() { }
 
   ngOnInit() {
