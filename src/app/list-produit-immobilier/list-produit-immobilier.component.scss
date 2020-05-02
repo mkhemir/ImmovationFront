@@ -1,0 +1,14 @@
+.bg-img {
+  /* The image used */
+  background-image: url("../../assets/images/joshua.png");
+
+  min-height: 80px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Needed to position the navbar */
+  position: relative;
+}

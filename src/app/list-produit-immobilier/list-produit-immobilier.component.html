@@ -1,18 +1,40 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <body>
+<nav class="navbar navbar-expand-xl bg-light bg-img mt-xl-5">
+  <div class="container ">
+    <div class="row">
+      <form class=" form-row">
+        <select class="col custom-select form-control mr-xl-3">
+          <option selected>Achat</option>
+          <option value="">Location</option>
+        </select>
+        <input class="col form-control mr-xl-3" type="text" placeholder="Search" aria-label="Search">
+        <input class="col form-control mr-xl-3" type="text" placeholder="Search" aria-label="Search">
+        <input class="col form-control mr-sm-3" type="text" placeholder="Search" aria-label="Search">
+        <input class="col form-control mr-sm-3" type="text" placeholder="Search" aria-label="Search">
+        <select class="col custom-select form-control mr-xl-3">
+          <option selected>Autres</option>
+          <option value="">Location</option>
+        </select>
+        <button class="col-xl-1  poppinsbold12diese372300 backgroundPrimary" type="submit">Search</button>
+      </form>
+
+    </div>
+
+  </div>
+
+</nav>
 <div class="container mt-xl-5">
   <!--Row with two equal columns-->
-  <div  class="row" >
+  <div class="row">
     <div *ngFor="let pr of annonces" class="col-sm-7 col-md-5 col-lg-6 col-xl-6">
       <app-product-light [produit]="pr"></app-product-light>
     </div>
   </div>
 
-  </div>
+</div>
 
 </body>
 </html>
