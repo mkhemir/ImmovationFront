@@ -26,10 +26,15 @@
   </div>
 
 </nav>
-<div class="container mt-xl-5">
+
+<div class="container mt-4">
   <!--Row with two equal columns-->
-  <div class="row">
-    <div *ngFor="let pr of annonces" class="col-sm-7 col-md-5 col-lg-6 col-xl-6">
+  <div class="row mt-2 pull-right">
+    <!-- <span class="col-3 fa fa-list fa-1x mr-2" aria-hidden="true"></span>
+    <span class="col fa fa-map-marker fa-1x mr-2" style="position: relative" aria-hidden="true"></span> -->
+  </div>
+  <div class="row ">
+    <div *ngFor="let pr of annonces" class="col-sm-7 col-md-6 col-lg-6 col-xl-4">
       <app-product-light [produit]="pr"></app-product-light>
     </div>
   </div>
