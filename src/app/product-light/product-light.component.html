@@ -1,20 +1,29 @@
+<div class="card hoverable mb-4" data-toggle="modal" data-target="#basicExampleModal">
 
-<div class="cadre-general mt-xl-5">
-  <div class="bloc-img"></div>
-  <div style="padding: 5px">
-    <div style="margin-left: 10px">
-      <span class="poppinsregular12diese171717DE whitespacenowrap opacity05 ">{{produit.type}}</span>
-      <span
-        class="floatRight poppinsbold12dieseECB605 whitespacenowrap"
-        style="margin-right: 10px; margin-top: 5px">{{produit.prix | currency:'EUR':'symbol':'1.0-0':'fr'}}</span>
-    </div>
-    <div class="poppinsextrabold14diese171717DE floatLeft whitespacenowrap"
-         style="margin-left: 10px">{{produit.nbrPiece}}
-      Pièces / {{produit.nbrChambre}} Chambres / {{produit.surfaceHabitable}}m<sup>2</sup>
-    </div>
-    <br/>
-    <div class="poppinsregular12diese171717DE whitespacenowrap opacity05 "
-         style="margin-left: 10px"> {{produit.adresse}}  / {{produit.ville}}  / {{produit.codePostal}}
+  <!-- Card image -->
+  <img class="card-img-top" src="../../assets/images/maison1.png" alt="Card image cap">
+
+  <!-- Card content -->
+  <div class="card-body">
+
+
+
+    <div>
+      <div>
+        <span class="poppinsregular12diese171717DE whitespacenowrap opacity05 ">{{produit.type}}</span>
+        <span
+          class="floatRight poppinsbold12dieseECB605 whitespacenowrap"
+          style=" margin-top: 5px">{{produit.prix | currency:'EUR':'symbol':'1.0-0':'fr'}}</span>
+      </div>
+      <div class="poppinsextrabold14diese171717DE floatLeft whitespacenowrap">{{produit.nbrPiece}}
+        Pièces / {{produit.nbrChambre}} Chambres / {{produit.surfaceHabitable}}m<sup>2</sup>
+      </div>
+      <br/>
+      <div class="poppinsregular12diese171717DE whitespacenowrap opacity05 "> {{produit.adresse}}  / {{produit.ville}}  / {{produit.codePostal}}
+      </div>
     </div>
   </div>
+
 </div>
+
+

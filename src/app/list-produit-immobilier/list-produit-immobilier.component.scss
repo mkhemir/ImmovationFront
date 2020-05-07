@@ -1,14 +1,11 @@
-.bg-img {
-  /* The image used */
-  background-image: url("../../assets/images/img2.jpg");
-
-  min-height: 80px;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  /* Needed to position the navbar */
-  position: relative;
+.md-pills .nav-link.active {
+  color: #fff;
+  background-color: #616161;
+}
+button.close {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  padding-right: 1rem;
+  padding-top: .6rem;
 }

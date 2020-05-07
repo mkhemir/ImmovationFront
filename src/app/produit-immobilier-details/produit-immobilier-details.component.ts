@@ -6,7 +6,8 @@ import {ListProduitImmobilierService} from '../list-produit-immobilier/list-prod
 
 @Component({
   selector: 'app-produit-immobilier-details',
-  templateUrl: 'produit-immobilier-details.component.html',
+  templateUrl: './produit-immobilier-details.component.html',
+  styleUrls: ['./produit-immobilier-details.component.scss']
 })
 
 export class ProduitImmobilierDetailsComponent implements OnInit {

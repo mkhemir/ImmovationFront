@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<body>
-<nav class="navbar navbar-expand-xl bg-light bg-img mt-xl-5">
+<nav class="navbar navbar-expand-xl navbar-dark grey lighten-2 mt-5 " >
   <div class="container ">
-    <div class="row">
+    <div class="row mb-2 mt-3 ml-4 mr-3">
       <form class=" form-row">
         <select class="col custom-select form-control mr-xl-3">
           <option selected>Achat</option>
@@ -27,19 +23,58 @@
 
 </nav>
 
-<div class="container mt-4">
-  <!--Row with two equal columns-->
-  <div class="row mt-2 pull-right">
-    <!-- <span class="col-3 fa fa-list fa-1x mr-2" aria-hidden="true"></span>
-    <span class="col fa fa-map-marker fa-1x mr-2" style="position: relative" aria-hidden="true"></span> -->
-  </div>
-  <div class="row ">
-    <div *ngFor="let pr of annonces" class="col-sm-7 col-md-6 col-lg-6 col-xl-4">
-      <app-product-light [produit]="pr"></app-product-light>
+<div class="container my-5">
+  <!-- Section -->
+  <section>
+    <!--First row-->
+    <div class="row">
+
+      <!--First column-->
+      <div class="col-12">
+
+        <!-- Nav tabs -->
+        <ul class="nav md-pills pull-right flex-wrap mb-2" role="tablist">
+          <li class="nav-item">
+            <a class="col-3 fa fa-list fa-1x " aria-hidden="true"></a>
+          </li>
+          <li class="nav-item">
+            <a class="col fa fa-map-marker fa-1x " style="position: relative" aria-hidden="true"></a>
+          </li>
+        </ul>
+
+      </div>
+      <!--First column-->
+
     </div>
-  </div>
+    <!--First row-->
+
+    <!--Tab panels-->
+    <div class="tab-content mb-5">
+
+      <!--Panel 1-->
+      <div class="tab-pane fade show in active" id="panel31" role="tabpanel">
+
+        <!-- Grid row -->
+        <div class="row">
+
+          <!-- Grid column -->
+          <div *ngFor="let pr of annonces" class="col-md-12 col-lg-4">
+
+
+            <app-produit-card [produit]="pr"></app-produit-card>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+      </div>
+
+    </div>
+    <!--Tab panels-->
+
+  </section>
+  <!-- Section -->
 
 </div>
-
-</body>
-</html>
