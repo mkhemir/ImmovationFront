@@ -12,6 +12,8 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductLightComponent } from './product-light/product-light.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ProduitCardComponent } from './produit-immobilier-details/produit-card/produit-card.component';
 
 registerLocaleData(localeFr, 'fr');
 declare var $: any;
@@ -25,7 +27,8 @@ console.log(`jQuery version: ${$.fn.jquery}`);
     ListProduitImmobilierComponent,
     ProduitImmobilierDetailsComponent,
     HeaderComponent,
-    ProductLightComponent
+    ProductLightComponent,
+    ProduitCardComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ console.log(`jQuery version: ${$.fn.jquery}`);
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

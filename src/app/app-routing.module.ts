@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListProduitImmobilierComponent } from './list-produit-immobilier/list-produit-immobilier.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ProduitImmobilierDetailsComponent } from './produit-immobilier-details/produit-immobilier-details.component';
 const routes: Routes = [
   {
     path: '',
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'listProduitImmobiler',
     component: ListProduitImmobilierComponent
+  },
+  {
+    path: 'produitImmobiler',
+    component: ProduitImmobilierDetailsComponent
   }
   ];
 
