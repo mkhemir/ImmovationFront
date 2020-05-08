@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductLightComponent } from './product-light/product-light.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ProduitCardComponent } from './produit-immobilier-details/produit-card/produit-card.component';
+import { ProduitChartComponent } from './produit-immobilier-details/produit-card/produit-chart/produit-chart.component';
 
 registerLocaleData(localeFr, 'fr');
 declare var $: any;
@@ -28,7 +29,8 @@ console.log(`jQuery version: ${$.fn.jquery}`);
     ProduitImmobilierDetailsComponent,
     HeaderComponent,
     ProductLightComponent,
-    ProduitCardComponent
+    ProduitCardComponent,
+    ProduitChartComponent
   ],
   imports: [
     BrowserModule,
