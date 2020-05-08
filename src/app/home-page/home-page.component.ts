@@ -2,6 +2,8 @@ import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from '../common.service';
 import { ProduitImmobilierDTO } from '../produit-immobilier-dto';
+import { Search } from '../search';
+import { Router } from '@angular/router';
 
 //declare var $:JQueryStatic;
 
@@ -32,7 +34,7 @@ export class HomePageComponent implements OnInit, AfterViewInit {
   //     }
   //   }
 
-  constructor(private formBuilder: FormBuilder, private commonService: CommonService) { }
+  constructor(private formBuilder: FormBuilder, private commonService: CommonService, private router: Router) { }
 
   ngOnInit() {
     this.investmentFormGroup = this.formBuilder.group({
@@ -49,6 +51,15 @@ export class HomePageComponent implements OnInit, AfterViewInit {
     });
     this.commonService.currentColor.subscribe(color => this.color = color);
     this.newColor('white');
+  }
+
+  search() {
+    const search = new Search();
+    search.ville = this.searchFormGroup.get('ville').value === null ? '' : this.searchFormGroup.get('ville').value;
+    // tslint:disable-next-line: max-line-length
+    search.prixMax = (this.searchFormGroup.get('prixMax').value === null || this.searchFormGroup.get('prixMax').value === '') ? 0 : this.searchFormGroup.get('prixMax').value;
+    this.commonService.search = search;
+    this.router.navigate(['/listproduitimmobilier']);
   }
 
   ngAfterViewInit() {

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 // import {Search} from './search';
 import { BehaviorSubject} from 'rxjs';
+import { Search } from './search';
 // import { SecurityDTO } from './security-dto';
 
 @Injectable({
@@ -16,6 +17,8 @@ export class CommonService {
 
   private colorSource = new BehaviorSubject('');
   currentColor = this.colorSource.asObservable();
+
+  public search : Search;
 
   constructor() {}
 

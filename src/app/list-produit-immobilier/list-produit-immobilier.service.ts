@@ -18,8 +18,8 @@ export class ListProduitImmobilierService {
   getListProduitImmobilierDTO(search: Search): Observable<ProduitImmobilierDTO[]> {
     const headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
     headers.append('Access-Control-Allow-Origin: *', 'utf-8');
-    const options = {headers};
-    return this.http.post<Search>('http://192.168.99.100:5555/api/produit/produits', new Search(), options)
+    const options = {headers};/*192.168.99.100*/
+    return this.http.post<Search>('http://localhost:5555/api/produit/produits', new Search(), options)
       .pipe(map((recherche: Search) => recherche.result as ProduitImmobilierDTO[]));
   }
 
