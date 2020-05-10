@@ -12,7 +12,7 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductLightComponent } from './product-light/product-light.component';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MDBBootstrapModule, ChartsModule } from 'angular-bootstrap-md';
 import { ProduitCardComponent } from './produit-immobilier-details/produit-card/produit-card.component';
 import { ProduitChartComponent } from './produit-immobilier-details/produit-card/produit-chart/produit-chart.component';
 
@@ -39,6 +39,7 @@ console.log(`jQuery version: ${$.fn.jquery}`);
     ReactiveFormsModule,
     CommonModule,
     HttpClientModule,
+    ChartsModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [],

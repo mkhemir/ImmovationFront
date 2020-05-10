@@ -322,8 +322,16 @@
 	line-height: 117px;
 }
 
+.displayNone {
+  display: none !important;
+}
+
 .displayInlineBlock {
   display: inline-block;
+}
+
+.displayBlock {
+  display: block;
 }
 
 .vertical-center {

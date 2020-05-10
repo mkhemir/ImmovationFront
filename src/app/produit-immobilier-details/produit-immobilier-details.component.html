@@ -45,7 +45,7 @@
   </div>
   <!--Section: Content-->
   <section class="text-center dark-grey-text mb-5">
-    <nav class="navbar  navbar-expand-lg navbar-dark black">
+    <!-- <nav class="navbar  navbar-expand-lg navbar-dark black">
       <div class="container">
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -62,7 +62,31 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> -->
+						<hr color="blue" width="100%">
+						<nav style="position:relative;" class="navigation">
+								<ul class="menu">
+										<li><a id="menuHorizon1" (click)="applyClickCss($event)" href="javascript:void(0)">Description</a></li>
+                    <li><a id="menuHorizon2" class="expanded" (click)="applyClickCss($event)" href="javascript:void(0)">Mensualités</a></li>
+                    <li><a id="menuHorizon3" (click)="applyClickCss($event)" href="javascript:void(0)">Ameneties</a></li>
+										<li><a id="menuHorizon4" (click)="applyClickCss($event)" href="javascript:void(0)">Neighborhood and Transit</a></li>
+										<li><a id="menuHorizon5" (click)="applyClickCss($event)" href="javascript:void(0)">Property History</a></li>
+										<li><a id="menuHorizon6" (click)="applyClickCss($event)" href="javascript:void(0)">Agency</a></li>
+
+								</ul>
+						</nav>
+						<nav style="position:relative;" class="responsive-navigation">
+								<div (click)="toggleMenu()" class="toggle-menu" title="Menu"><img alt="Menu" title="Menu" src="./../../assets/images/menu-28px-25px.png"  style="vertical-align:middle; padding-right:3px"/>MENU</div>
+								<ul class="menu horizontal-center" style="padding-bottom: 10px;background-color: white;;position: absolute; z-index: 2;min-width: 180px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">
+										<li><a id="menuVertical1" (click)="applyClickCss($event)" href="javascript:void(0)">Description</a></li>
+                    <li><a id="menuVertical2" class="expanded" (click)="applyClickCss($event)" href="javascript:void(0)">Mensualite</a></li>
+                    <li><a id="menuVertical3" (click)="applyClickCss($event)" href="javascript:void(0)">Ameneties</a></li>
+										<li><a id="menuVertical4" (click)="applyClickCss($event)" href="javascript:void(0)">Neighborhood and Transit</a></li>
+										<li><a id="menuVertical5" (click)="applyClickCss($event)" href="javascript:void(0)">Property History</a></li>
+										<li><a id="menuVertical6" (click)="applyClickCss($event)" href="javascript:void(0)">Agency</a></li>
+								</ul>
+						</nav>																
+						<br>    
 
     <div class="view intro-2">
       <div class="full-bg-img">
