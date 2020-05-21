@@ -1,3 +1,4 @@
+import { AgmCoreModule } from '@agm/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -40,7 +41,11 @@ console.log(`jQuery version: ${$.fn.jquery}`);
     CommonModule,
     HttpClientModule,
     ChartsModule,
-    MDBBootstrapModule.forRoot()
+    AgmCoreModule,
+    MDBBootstrapModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA3nptWFYQVNZFsBws0egtBoEzbv-Qye_Q'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

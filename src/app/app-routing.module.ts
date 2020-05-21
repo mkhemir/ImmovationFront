@@ -14,7 +14,7 @@ const routes: Routes = [
     component: HomePageComponent
   },
   {
-    path: 'listProduitImmobiler',
+    path: 'listProduitImmobilier',
     component: ListProduitImmobilierComponent
   },
   {

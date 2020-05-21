@@ -27,18 +27,228 @@
 
 </nav>
 
-<div class="container mt-5">
-  <!--Row with two equal columns-->
-  <div class="row mt-2 pull-right">
-    <!-- <span class="col-3 fa fa-list fa-1x mr-2" aria-hidden="true"></span>
-    <span class="col fa fa-map-marker fa-1x mr-2" style="position: relative" aria-hidden="true"></span> -->
-  </div>
-  <div class="row ">
-    <div *ngFor="let pr of annonces" class="col-sm-7 col-md-6 col-lg-6 col-xl-4">
-      <app-product-light [produit]="pr"></app-product-light>
-    </div>
-  </div>
 
+<div class="container mt-5">
+  <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <span class="poppinsregular16dieseBCBCBC">{{annonces.length}} properties</span>
+    <span class="pull-right">
+      <img (click)="viewMap = !viewMap"  class="cursorpointer" src="../../assets/images/190-menu.svg" alt="un menu" title="Lister les annonces" height="32px" width="32px" />&nbsp;&nbsp;
+      <span [style.color]="viewMap ? 'green' : '#BCBCBC'" (click)="displayMap()" title="Afficher la carte" class="cursorpointer poppinsregular16dieseBCBCBC">MAP</span>
+    </span>
+  </div>
+  <!--Row with two equal columns-->
+   <!--<div class="row mt-2 pull-right">
+     <span class="col-3 fa fa-list fa-1x mr-2" aria-hidden="true"></span>
+    <span class="col fa fa-map-marker fa-1x mr-2" style="position: relative" aria-hidden="true"></span>
+  </div> -->
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" *ngIf="viewMap === false">
+      <div class="row">
+        <div *ngFor="let pr of annonces" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+          <app-product-light [produit]="pr"></app-product-light>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" *ngIf="viewMap === true">
+      <div class="row" >
+        <!--id="listeXS"-->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"  *ngIf="innersize < 576">
+          <div class="row">
+              <div *ngFor="let pr of annonces; let index = index;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">   
+                <div  id="prePreviousMapIdXS" [style.height.px]="0" *ngIf="index === (insertIndex-1)"></div>
+                <div  id="previousMapIdXS" [style.height.px]="0" *ngIf="index === insertIndex"></div>
+                <div  id="card{{index}}IdXS">
+                  <app-product-light (mouseenter) ="mouseEnterProduitImmobilier(index)"  (mouseleave) ="mouseLeaveProduitImmobilier(index)"  [produit]="pr"></app-product-light>
+                </div>
+                <div  id="listXSMap" [style.margin-bottom.px]="25"  [style.width.px]="cardWidth" [style.height.px]="cardHeight" *ngIf="index === insertIndex" >
+                  <agm-map #gm [latitude]="mainLatitude" [longitude]="mainLongitude" [style.height.px]="computeMapXSHeight()" [fitBounds]="true">
+                    <agm-marker *ngFor="let marker of markers; let index = index"  [latitude]="marker.latitude" [longitude]="marker.longitude" [iconUrl]="markers[index].markerIcon" [animation]="markers[index].markerAnimation" (markerClick)="clickedMarker(infoWindow, gm)" [agmFitBounds]="true">
+                        <agm-info-window [disableAutoPan]="false" #infoWindow [maxWidth]="350">
+                            <span class="">
+                              <div style="float: left;">
+                              <img width="70" height="40"   src="../../assets/images/maison1.png" alt="Card image cap">
+                              </div>
+                              <div style="float: right; padding-left: 10px">
+                              <div class="poppinsbold10diese372300 whitespacenowrap">{{annonces[index].nbrPiece}}
+                                Pièces / {{annonces[index].nbrChambre}} Chambres / {{annonces[index].surfaceHabitable}}m<sup>2</sup>
+                              </div>              
+                              <div class="poppinsregular8diese171717DE whitespacenowrap opacity05 ">
+                                {{annonces[index].adresse}}  / {{annonces[index].ville}}  / {{annonces[index].codePostal}}
+                              </div>
+                              <div class="poppinsextrabold10diese372300 whitespacenowrap" style=" margin-top: 5px">
+                                {{annonces[index].prix | currency:'EUR':'symbol':'1.0-0':'fr'}}
+                              </div>  
+                              </div>                  
+                            </span>
+                        </agm-info-window>
+                    </agm-marker>
+                  </agm-map>    
+                </div>
+              </div>
+          </div>
+        </div>
+        <!--id="listeSM"--> 
+        <div class="col-sm-12"  *ngIf="innersize >= 576 && innersize < 768">
+          <div class="row">
+          <ng-container *ngIf="showProduitImmobilier">
+            <div *ngFor="let pr of annonces; let index = index;" class="col-sm-12">
+              <div id="prePreviousMapIdSM" [style.height.px]="0" *ngIf="index === (insertIndex-1)"></div>
+              <div id="previousMapIdSM" [style.height.px]="0" *ngIf="index === insertIndex"></div>
+              <div id="card{{index}}IdSM">
+                <app-product-light (mouseenter) ="mouseEnterProduitImmobilier(index)"  (mouseleave) ="mouseLeaveProduitImmobilier(index)" [produit]="pr"></app-product-light>
+              </div>
+              <div id="listSMMap" [style.margin-bottom.px]="25"  [style.width.px]="cardWidth" [style.height.px]="cardHeight" *ngIf="index === insertIndex" >
+                <agm-map #gm [latitude]="mainLatitude" [longitude]="mainLongitude" [style.height.px]="computeMapSMHeight()" [fitBounds]="true">
+                  <agm-marker *ngFor="let marker of markers; let index = index"  [latitude]="marker.latitude" [longitude]="marker.longitude" [iconUrl]="markers[index].markerIcon" [animation]="markers[index].markerAnimation" (markerClick)="clickedMarker(infoWindow, gm)" [agmFitBounds]="true">
+                      <agm-info-window [disableAutoPan]="false" #infoWindow [maxWidth]="350">
+                          <span class="">
+                            <div style="float: left;">
+                            <img width="70" height="40"   src="../../assets/images/maison1.png" alt="Card image cap">
+                            </div>
+                            <div style="float: right; padding-left: 10px">
+                            <div class="poppinsbold10diese372300 whitespacenowrap">{{annonces[index].nbrPiece}}
+                              Pièces / {{annonces[index].nbrChambre}} Chambres / {{annonces[index].surfaceHabitable}}m<sup>2</sup>
+                            </div>              
+                            <div class="poppinsregular8diese171717DE whitespacenowrap opacity05 ">
+                               {{annonces[index].adresse}}  / {{annonces[index].ville}}  / {{annonces[index].codePostal}}
+                            </div>
+                            <div class="poppinsextrabold10diese372300 whitespacenowrap" style=" margin-top: 5px">
+                              {{annonces[index].prix | currency:'EUR':'symbol':'1.0-0':'fr'}}
+                            </div>  
+                            </div>                  
+                          </span>
+                       </agm-info-window>
+                  </agm-marker>
+                </agm-map> 
+                </div>            
+            </div>
+          </ng-container>
+          </div>
+        </div> 
+        <!--id="listeMD"-->
+        <div class="col-md-12"  *ngIf="innersize >= 768 && innersize < 992">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div *ngFor="let pr of annonces; let index = index;" class="col-md-12">
+                  <div id="previousFirstProduitMD" [style.height.px]="0" *ngIf="index === 0"></div>
+                  <app-product-light (mouseenter) ="mouseEnterProduitImmobilier(index)"  (mouseleave) ="mouseLeaveProduitImmobilier(index)" [produit]="pr"></app-product-light>
+                </div>
+              </div>
+            </div>
+           <div class="col-md-6">
+              <div class="row">
+                <div id="listMDMap" [style.position]="mapMDTop === 0 ? 'static' : 'absolute'" [style.top.px]="mapMDTop"  class="col-md-12" [style.height.px]="computeMapMDHeight()" >
+                  <agm-map #gm [latitude]="mainLatitude" [longitude]="mainLongitude" [style.height.px]="computeMapMDHeight()" [fitBounds]="true">
+                    <agm-marker *ngFor="let marker of markers; let index = index"  [latitude]="marker.latitude" [longitude]="marker.longitude" [iconUrl]="markers[index].markerIcon" [animation]="markers[index].markerAnimation" (markerClick)="clickedMarker(infoWindow, gm)" [agmFitBounds]="true">
+                        <agm-info-window [disableAutoPan]="false" #infoWindow [maxWidth]="350">
+                            <span class="">
+                              <div style="float: left;">
+                              <img width="70" height="40"   src="../../assets/images/maison1.png" alt="Card image cap">
+                              </div>
+                              <div style="float: right; padding-left: 10px">
+                              <div class="poppinsbold10diese372300 whitespacenowrap">{{annonces[index].nbrPiece}}
+                                Pièces / {{annonces[index].nbrChambre}} Chambres / {{annonces[index].surfaceHabitable}}m<sup>2</sup>
+                              </div>              
+                              <div class="poppinsregular8diese171717DE whitespacenowrap opacity05 ">
+                                {{annonces[index].adresse}}  / {{annonces[index].ville}}  / {{annonces[index].codePostal}}
+                              </div>
+                              <div class="poppinsextrabold10diese372300 whitespacenowrap" style=" margin-top: 5px">
+                                {{annonces[index].prix | currency:'EUR':'symbol':'1.0-0':'fr'}}
+                              </div>  
+                              </div>                  
+                            </span>
+                        </agm-info-window>
+                    </agm-marker>
+                  </agm-map>              
+                </div>
+              </div>
+            </div>            
+          </div>
+        </div>
+        <!--id="listeLG"-->
+        <div class="col-lg-12" *ngIf="innersize >= 992 && innersize < 1200">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="row">
+                <div *ngFor="let pr of annonces; let index = index" class="col-lg-12">
+                  <app-product-light (mouseenter) ="mouseEnterProduitImmobilier(index)"  (mouseleave) ="mouseLeaveProduitImmobilier(index)" [produit]="pr"></app-product-light>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <div id="listLGMap"  #gm [style.position]="mapLGTop === 0 ? 'static' : 'absolute'" [style.top.px]="mapLGTop"  [style.height.px]="computeMapLGHeight()" class="col-lg-12"  >
+                  <agm-map #gm [latitude]="mainLatitude" [longitude]="mainLongitude" [style.height.px]="computeMapLGHeight()" [fitBounds]="true">
+                    <agm-marker *ngFor="let marker of markers; let index = index"  [latitude]="marker.latitude" [longitude]="marker.longitude" [iconUrl]="markers[index].markerIcon" [animation]="markers[index].markerAnimation" (markerClick)="clickedMarker(infoWindow, gm)" [agmFitBounds]="true">
+                        <agm-info-window [disableAutoPan]="false" #infoWindow>
+                            <span class="">
+                              <div style="float: left;">
+                              <img width="70" height="40"   src="../../assets/images/maison1.png" alt="Card image cap">
+                              </div>
+                              <div style="float: right; padding-left: 10px">
+                              <div class="poppinsbold10diese372300 whitespacenowrap">{{annonces[index].nbrPiece}}
+                                Pièces / {{annonces[index].nbrChambre}} Chambres / {{annonces[index].surfaceHabitable}}m<sup>2</sup>
+                              </div>              
+                              <div class="poppinsregular8diese171717DE whitespacenowrap opacity05 ">
+                                {{annonces[index].adresse}}  / {{annonces[index].ville}}  / {{annonces[index].codePostal}}
+                              </div>
+                              <div class="poppinsextrabold10diese372300 whitespacenowrap" style=" margin-top: 5px">
+                                {{annonces[index].prix | currency:'EUR':'symbol':'1.0-0':'fr'}}
+                              </div>  
+                              </div>                  
+                            </span>
+                        </agm-info-window>
+                    </agm-marker>
+                  </agm-map>             
+                </div>
+              </div>
+            </div>            
+          </div>
+        </div>
+        <!--id="listeXL"-->        
+        <div class="col-xl-12"  *ngIf="innersize >= 1200">
+          <div class="row">
+            <div class="col-xl-4">
+              <div class="row">
+                <div *ngFor="let pr of annonces; let index = index" class="col-xl-12 ">
+                  <app-product-light (mouseenter) ="mouseEnterProduitImmobilier(index)"  (mouseleave) ="mouseLeaveProduitImmobilier(index)" [produit]="pr"></app-product-light>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-8">
+              <div class="row">
+                <div id="listXLMap" [style.position]="mapXLTop === 0 ? 'static' : 'absolute'" [style.top.px]="mapXLTop" [style.height.px]="computeMapXLHeight()" class="col-xl-12" >
+                  <agm-map #gm (mapReady)="fitMapBounds($event)" [latitude]="mainLatitude" [longitude]="mainLongitude" [style.height.px]="computeMapXLHeight()" [fitBounds]="true">
+                    <agm-marker *ngFor="let marker of markers; let index = index"  [latitude]="marker.latitude" [longitude]="marker.longitude" [iconUrl]="markers[index].markerIcon" [animation]="markers[index].markerAnimation" (markerClick)="clickedMarker(infoWindow, gm)" [agmFitBounds]="true">
+                        <agm-info-window [disableAutoPan]="false" #infoWindow>
+                            <span class="">
+                              <div style="float: left;">
+                              <img width="70" height="40"   src="../../assets/images/maison1.png" alt="Card image cap">
+                              </div>
+                              <div style="float: right; padding-left: 10px">
+                              <div class="poppinsbold10diese372300 whitespacenowrap">{{annonces[index].nbrPiece}}
+                                Pièces / {{annonces[index].nbrChambre}} Chambres / {{annonces[index].surfaceHabitable}}m<sup>2</sup>
+                              </div>              
+                              <div class="poppinsregular8diese171717DE whitespacenowrap opacity05 ">
+                                {{annonces[index].adresse}}  / {{annonces[index].ville}}  / {{annonces[index].codePostal}}
+                              </div>
+                              <div class="poppinsextrabold10diese372300 whitespacenowrap" style=" margin-top: 5px">
+                                {{annonces[index].prix | currency:'EUR':'symbol':'1.0-0':'fr'}}
+                              </div>  
+                              </div>                  
+                            </span>
+                        </agm-info-window>
+                    </agm-marker>
+                  </agm-map>              
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>                          
+    </div>    
+</div>
 </div>
 
 </body>

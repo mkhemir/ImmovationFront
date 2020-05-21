@@ -49,6 +49,13 @@
 
 /*** fontes appliquées DEBUT ****/
 
+.poppinsregular8diese171717DE {
+	font-family: Poppins;
+	font-weight: 400;
+	font-size: 8px;
+	color: #171717DE;
+}
+
 .poppinsregular10diese000000 {
 	font-family: Poppins;
 	font-weight: 400;
@@ -113,11 +120,25 @@
 	color: #372300;
 }
 
+.poppinsregular16dieseBCBCBC {
+	font-family: Poppins;
+	font-weight: 400;
+	font-size: 16px;
+	color: #BCBCBC;
+}
+
 .poppinsmedium12dieseECB605 {
 	font-family: Poppins;
 	font-weight: 500;
 	font-size: 12px;
 	color: #ECB605;
+}
+
+.poppinsbold10diese372300 {
+	font-family: Poppins;
+	font-weight: 700;
+	font-size: 10px;
+	color: #372300;
 }
 
 .poppinsbold12diese372300 {
@@ -147,6 +168,13 @@
 	font-weight: 700;
 	font-size: 19px;
 	color: #1C1200;
+}
+
+.poppinsextrabold10diese372300 {
+	font-family: Poppins;
+	font-weight: 800;
+	font-size: 10px;
+	color: #372300;
 }
 
 .poppinsextrabold12diese171717DE {
@@ -445,3 +473,8 @@
 }
 
 /*** HomePage FIN *****/
+
+
+.gm-style-iw.gm-style-iw-c {
+	max-width: 350px !important;
+}

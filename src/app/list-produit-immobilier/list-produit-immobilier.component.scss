@@ -9,3 +9,144 @@ button.close {
   padding-right: 1rem;
   padding-top: .6rem;
 }
+
+
+/********   DISPLY LIST OF PROPERTIES BEGIN  ***********/
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+#listeXS {
+  display: block;
+}
+
+#listeSM {
+  display: none;
+}
+
+#listeMD {
+  display: none;
+}
+
+#listeLG {
+  display: none;
+}
+
+#listeXL {
+  display: none;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+  #listeXS {
+    display: none;
+  }
+
+  #listeSM {
+    display: block;
+  }
+
+  #listeMD {
+    display: none;
+  }
+
+  #listeLG {
+    display: none;
+  }
+
+  #listeXL {
+    display: none;
+  }
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+  #listeXS {
+    display: none;
+  }
+
+  #listeSM {
+    display: none;
+  }
+
+  #listeMD {
+    display: block;
+  }
+
+  #listeLG {
+    display: none;
+  }
+
+  #listeXL {
+    display: none;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+  #listeXS {
+    display: none;
+  }
+
+  #listeSM {
+    display: none;
+  }
+
+  #listeMD {
+    display: none;
+  }
+
+  #listeLG {
+    display: block;
+  }
+
+  #listeXL {
+    display: none;
+  }  
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+  #listeXS {
+    display: none;
+  }
+
+  #listeSM {
+    display: none;
+  }
+
+  #listeMD {
+    display: none;
+  }
+
+  #listeLG {
+    display: none;
+  }
+
+  #listeXL {
+    display: block;
+  }
+}
+
+@media (max-width: 575px) {
+  .container {
+    width: 94%;
+  }
+}
+
+/*****   POPUP on the MAP ***/
+
+.vignette
+{
+background-image: url('./../../assets/images/maison1.png');
+background-repeat: no-repeat;
+//padding-left: 30px;  /* width of the image plus a little extra padding */
+display: block;  /* may not need this, but I've found I do */
+width: 70px;
+height: 40px;
+}
