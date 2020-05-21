@@ -37,11 +37,6 @@
       <span [style.color]="viewMap ? 'green' : '#BCBCBC'" (click)="displayMap()" title="Afficher la carte" class="cursorpointer poppinsregular16dieseBCBCBC">MAP</span>
     </span>
   </div>
-  <!--Row with two equal columns-->
-   <!--<div class="row mt-2 pull-right">
-     <span class="col-3 fa fa-list fa-1x mr-2" aria-hidden="true"></span>
-    <span class="col fa fa-map-marker fa-1x mr-2" style="position: relative" aria-hidden="true"></span>
-  </div> -->
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" *ngIf="viewMap === false">
       <div class="row">
         <div *ngFor="let pr of annonces" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
@@ -61,7 +56,7 @@
                   <app-product-light (mouseenter) ="mouseEnterProduitImmobilier(index)"  (mouseleave) ="mouseLeaveProduitImmobilier(index)"  [produit]="pr"></app-product-light>
                 </div>
                 <div  id="listXSMap" [style.margin-bottom.px]="25"  [style.width.px]="cardWidth" [style.height.px]="cardHeight" *ngIf="index === insertIndex" >
-                  <agm-map #gm [latitude]="mainLatitude" [longitude]="mainLongitude" [style.height.px]="computeMapXSHeight()" [fitBounds]="true">
+                  <agm-map #gm [latitude]="mainLatitude" [longitude]="mainLongitude" [style.height.px]="mapXSHeight" [fitBounds]="true">
                     <agm-marker *ngFor="let marker of markers; let index = index"  [latitude]="marker.latitude" [longitude]="marker.longitude" [iconUrl]="markers[index].markerIcon" [animation]="markers[index].markerAnimation" (markerClick)="clickedMarker(infoWindow, gm)" [agmFitBounds]="true">
                         <agm-info-window [disableAutoPan]="false" #infoWindow [maxWidth]="350">
                             <span class="">
@@ -98,7 +93,7 @@
                 <app-product-light (mouseenter) ="mouseEnterProduitImmobilier(index)"  (mouseleave) ="mouseLeaveProduitImmobilier(index)" [produit]="pr"></app-product-light>
               </div>
               <div id="listSMMap" [style.margin-bottom.px]="25"  [style.width.px]="cardWidth" [style.height.px]="cardHeight" *ngIf="index === insertIndex" >
-                <agm-map #gm [latitude]="mainLatitude" [longitude]="mainLongitude" [style.height.px]="computeMapSMHeight()" [fitBounds]="true">
+                <agm-map #gm [latitude]="mainLatitude" [longitude]="mainLongitude" [style.height.px]="mapSMHeight" [fitBounds]="true">
                   <agm-marker *ngFor="let marker of markers; let index = index"  [latitude]="marker.latitude" [longitude]="marker.longitude" [iconUrl]="markers[index].markerIcon" [animation]="markers[index].markerAnimation" (markerClick)="clickedMarker(infoWindow, gm)" [agmFitBounds]="true">
                       <agm-info-window [disableAutoPan]="false" #infoWindow [maxWidth]="350">
                           <span class="">

@@ -34,6 +34,9 @@ export class ListProduitImmobilierComponent implements OnInit, AfterViewInit, Af
   public mainLongitude = 0;
   public bounds: any;
 
+  public mapXSHeight = 0;
+  public mapSMHeight = 0;
+
 
   public markers = [
     {
@@ -123,7 +126,8 @@ export class ListProduitImmobilierComponent implements OnInit, AfterViewInit, Af
   onResize() {
     console.log('onResize triggered');
     this.innersize = window.innerWidth;
-    if (this.innersize == 575 || this.innersize == 576 ||  this.innersize === 767 || this.innersize === 768 || this.innersize === 991 || this.innersize === 992 || this.innersize === 1199 || this.innersize === 1200) {
+    // tslint:disable-next-line: max-line-length
+    if (this.innersize === 575 || this.innersize === 576 ||  this.innersize === 767 || this.innersize === 768 || this.innersize === 991 || this.innersize === 992 || this.innersize === 1199 || this.innersize === 1200) {
       this.setBounds();
     }
     if (this.innersize === 575 || this.innersize === 576) {
@@ -215,13 +219,33 @@ export class ListProduitImmobilierComponent implements OnInit, AfterViewInit, Af
     this.mainLatitude = latitudeResult / 10;
     this.mainLongitude = longitudeResult / 10;
     this.setBounds();
+    //
   }
 
   ngAfterViewInit() {
+    
   }
 
   ngAfterViewChecked() {
+    if (this.innersize < 576) {
+      if (this.viewMap && $('div#card0IdXS').width() !== undefined && $('div#card0IdXS').height() !== undefined) {
+        this.cardWidth = $('div#card0IdXS').width();
+        this.cardHeight = $('div#card0IdXS').height();
+        this.cdRef.detectChanges();
+      }
+    }
+    if (this.innersize >= 576 || this.innersize < 768) {
+      if (this.viewMap && $('div#card0IdSM').width() !== undefined && $('div#card0IdSM').height() !== undefined) {
+        this.cardWidth = $('div#card0IdSM').width();
+        this.cardHeight = $('div#card0IdSM').height();
+        this.cdRef.detectChanges();
+        this.cardDimensionInitialized = true;
+      }
+     }    
+     this.mapXSHeight = this.computeMapXSHeight();
+     this.mapSMHeight = this.computeMapSMHeight();
 
+    this.cdRef.detectChanges();
   }
 
   mouseEnterProduitImmobilier(index: number) {
