@@ -1,6 +1,6 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {ProduitImmobilierDTO} from '../produit-immobilier-dto';
+import {ProduitImmobilierDTO} from '../models/produit-immobilier-dto';
 import {map} from 'rxjs/operators';
 import {Search} from '../models/Search';
 import {Injectable} from '@angular/core';

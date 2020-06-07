@@ -39,7 +39,7 @@
   </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" *ngIf="viewMap === false">
       <div class="row">
-        <div *ngFor="let pr of annonces" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+        <div *ngFor="let pr of annonces" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" (click)="getDetails(pr.id)">
           <app-product-light [produit]="pr"></app-product-light>
         </div>
       </div>
@@ -49,7 +49,7 @@
         <!--id="listeXS"-->
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"  *ngIf="innersize < 576">
           <div class="row">
-              <div *ngFor="let pr of annonces; let index = index;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">   
+              <div *ngFor="let pr of annonces; let index = index;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <div  id="prePreviousMapIdXS" [style.height.px]="0" *ngIf="index === (insertIndex-1)"></div>
                 <div  id="previousMapIdXS" [style.height.px]="0" *ngIf="index === insertIndex"></div>
                 <div  id="card{{index}}IdXS">
@@ -66,23 +66,23 @@
                               <div style="float: right; padding-left: 10px">
                               <div class="poppinsbold10diese372300 whitespacenowrap">{{annonces[index].nbrPiece}}
                                 Pièces / {{annonces[index].nbrChambre}} Chambres / {{annonces[index].surfaceHabitable}}m<sup>2</sup>
-                              </div>              
+                              </div>
                               <div class="poppinsregular8diese171717DE whitespacenowrap opacity05 ">
                                 {{annonces[index].adresse}}  / {{annonces[index].ville}}  / {{annonces[index].codePostal}}
                               </div>
                               <div class="poppinsextrabold10diese372300 whitespacenowrap" style=" margin-top: 5px">
                                 {{annonces[index].prix | currency:'EUR':'symbol':'1.0-0':'fr'}}
-                              </div>  
-                              </div>                  
+                              </div>
+                              </div>
                             </span>
                         </agm-info-window>
                     </agm-marker>
-                  </agm-map>    
+                  </agm-map>
                 </div>
               </div>
           </div>
         </div>
-        <!--id="listeSM"--> 
+        <!--id="listeSM"-->
         <div class="col-sm-12"  *ngIf="innersize >= 576 && innersize < 768">
           <div class="row">
           <ng-container *ngIf="showProduitImmobilier">
@@ -103,23 +103,23 @@
                             <div style="float: right; padding-left: 10px">
                             <div class="poppinsbold10diese372300 whitespacenowrap">{{annonces[index].nbrPiece}}
                               Pièces / {{annonces[index].nbrChambre}} Chambres / {{annonces[index].surfaceHabitable}}m<sup>2</sup>
-                            </div>              
+                            </div>
                             <div class="poppinsregular8diese171717DE whitespacenowrap opacity05 ">
                                {{annonces[index].adresse}}  / {{annonces[index].ville}}  / {{annonces[index].codePostal}}
                             </div>
                             <div class="poppinsextrabold10diese372300 whitespacenowrap" style=" margin-top: 5px">
                               {{annonces[index].prix | currency:'EUR':'symbol':'1.0-0':'fr'}}
-                            </div>  
-                            </div>                  
+                            </div>
+                            </div>
                           </span>
                        </agm-info-window>
                   </agm-marker>
-                </agm-map> 
-                </div>            
+                </agm-map>
+                </div>
             </div>
           </ng-container>
           </div>
-        </div> 
+        </div>
         <!--id="listeMD"-->
         <div class="col-md-12"  *ngIf="innersize >= 768 && innersize < 992">
           <div class="row">
@@ -144,21 +144,21 @@
                               <div style="float: right; padding-left: 10px">
                               <div class="poppinsbold10diese372300 whitespacenowrap">{{annonces[index].nbrPiece}}
                                 Pièces / {{annonces[index].nbrChambre}} Chambres / {{annonces[index].surfaceHabitable}}m<sup>2</sup>
-                              </div>              
+                              </div>
                               <div class="poppinsregular8diese171717DE whitespacenowrap opacity05 ">
                                 {{annonces[index].adresse}}  / {{annonces[index].ville}}  / {{annonces[index].codePostal}}
                               </div>
                               <div class="poppinsextrabold10diese372300 whitespacenowrap" style=" margin-top: 5px">
                                 {{annonces[index].prix | currency:'EUR':'symbol':'1.0-0':'fr'}}
-                              </div>  
-                              </div>                  
+                              </div>
+                              </div>
                             </span>
                         </agm-info-window>
                     </agm-marker>
-                  </agm-map>              
+                  </agm-map>
                 </div>
               </div>
-            </div>            
+            </div>
           </div>
         </div>
         <!--id="listeLG"-->
@@ -184,24 +184,24 @@
                               <div style="float: right; padding-left: 10px">
                               <div class="poppinsbold10diese372300 whitespacenowrap">{{annonces[index].nbrPiece}}
                                 Pièces / {{annonces[index].nbrChambre}} Chambres / {{annonces[index].surfaceHabitable}}m<sup>2</sup>
-                              </div>              
+                              </div>
                               <div class="poppinsregular8diese171717DE whitespacenowrap opacity05 ">
                                 {{annonces[index].adresse}}  / {{annonces[index].ville}}  / {{annonces[index].codePostal}}
                               </div>
                               <div class="poppinsextrabold10diese372300 whitespacenowrap" style=" margin-top: 5px">
                                 {{annonces[index].prix | currency:'EUR':'symbol':'1.0-0':'fr'}}
-                              </div>  
-                              </div>                  
+                              </div>
+                              </div>
                             </span>
                         </agm-info-window>
                     </agm-marker>
-                  </agm-map>             
+                  </agm-map>
                 </div>
               </div>
-            </div>            
+            </div>
           </div>
         </div>
-        <!--id="listeXL"-->        
+        <!--id="listeXL"-->
         <div class="col-xl-12"  *ngIf="innersize >= 1200">
           <div class="row">
             <div class="col-xl-4">
@@ -224,25 +224,25 @@
                               <div style="float: right; padding-left: 10px">
                               <div class="poppinsbold10diese372300 whitespacenowrap">{{annonces[index].nbrPiece}}
                                 Pièces / {{annonces[index].nbrChambre}} Chambres / {{annonces[index].surfaceHabitable}}m<sup>2</sup>
-                              </div>              
+                              </div>
                               <div class="poppinsregular8diese171717DE whitespacenowrap opacity05 ">
                                 {{annonces[index].adresse}}  / {{annonces[index].ville}}  / {{annonces[index].codePostal}}
                               </div>
                               <div class="poppinsextrabold10diese372300 whitespacenowrap" style=" margin-top: 5px">
                                 {{annonces[index].prix | currency:'EUR':'symbol':'1.0-0':'fr'}}
-                              </div>  
-                              </div>                  
+                              </div>
+                              </div>
                             </span>
                         </agm-info-window>
                     </agm-marker>
-                  </agm-map>              
+                  </agm-map>
                 </div>
               </div>
             </div>
           </div>
-        </div> 
-      </div>                          
-    </div>    
+        </div>
+      </div>
+    </div>
 </div>
 </div>
 

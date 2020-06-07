@@ -120,7 +120,7 @@ export class ListProduitImmobilierComponent implements OnInit, AfterViewInit, Af
           break;
       }
     }
-  }  
+  }
 
   @HostListener('window:resize', ['$event'])
   onResize() {
@@ -161,7 +161,7 @@ export class ListProduitImmobilierComponent implements OnInit, AfterViewInit, Af
         this.cardHeight = $('#card0IdXS').height();
       } else {
         this.cardWidth = $('#card0IdSM').width();
-        this.cardHeight = $('#card0IdSM').height();        
+        this.cardHeight = $('#card0IdSM').height();
       }
     }
     if (this.innersize === 767 || this.innersize === 768) {
@@ -223,7 +223,7 @@ export class ListProduitImmobilierComponent implements OnInit, AfterViewInit, Af
   }
 
   ngAfterViewInit() {
-    
+
   }
 
   ngAfterViewChecked() {
@@ -241,7 +241,7 @@ export class ListProduitImmobilierComponent implements OnInit, AfterViewInit, Af
         this.cdRef.detectChanges();
         this.cardDimensionInitialized = true;
       }
-     }    
+     }
      this.mapXSHeight = this.computeMapXSHeight();
      this.mapSMHeight = this.computeMapSMHeight();
 
@@ -299,7 +299,7 @@ export class ListProduitImmobilierComponent implements OnInit, AfterViewInit, Af
           }
           if (mm.latitude > maxLatitude) {
             maxLatitude = mm.latitude;
-          } 
+          }
           if (mm.longitude < minLongitude) {
             minLongitude = mm.longitude;
           }
@@ -316,7 +316,7 @@ export class ListProduitImmobilierComponent implements OnInit, AfterViewInit, Af
   }
 
   displayMap() {
-    this.viewMap = !this.viewMap; 
+    this.viewMap = !this.viewMap;
     if (this.viewMap) {
       this.setBounds();
     }
@@ -343,7 +343,7 @@ export class ListProduitImmobilierComponent implements OnInit, AfterViewInit, Af
       }
       if (mm.latitude > maxLatitude) {
         maxLatitude = mm.latitude;
-      } 
+      }
       if (mm.longitude < minLongitude) {
         minLongitude = mm.longitude;
       }
@@ -354,5 +354,9 @@ export class ListProduitImmobilierComponent implements OnInit, AfterViewInit, Af
     bounds.extend(new google.maps.LatLng(minLatitude, minLongitude));
     bounds.extend(new google.maps.LatLng(maxLatitude, maxLongitude));
     event.fitBounds(bounds);
+  }
+
+  getDetails(id: number){
+    this.router.navigate(['details', id]);
   }
 }

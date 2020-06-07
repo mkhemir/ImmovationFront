@@ -6,7 +6,7 @@ export class ProduitImmobilierDTO {
   public description: string;
   public nbrLots: number;
   public isParking: number;
-  public isBox: number;
+ // public isBox: number;
   public isCave: number;
   public isBalcon: number;
   public isTerasse: number;
@@ -38,16 +38,24 @@ export class ProduitImmobilierDTO {
   public ville: string;
   public zone: string;
   public prix: number;
+  public surface : number;
   public surfaceHabitable: number;
   public surfaceLoiQuarez: number;
   public surfaceBalcon: number;
   public surfaceTerrasse: number;
   public surfaceCave: number;
-  public surfaceLoggia: number;
+  public surfaceVerandas : number;
+  public surfaceSousSol : number;
+  public surfaceLogias: number;
   public autreSurfaceAnnexe: number;
   public loyerMaximum: number;
   public venteLocation: string;
   public collectionSize: number;
+  public estSitePSMV : boolean;
+  public estSitePVAP : boolean;
+  public loyerEstime : number;
+  public coutTravaux : number;
+  public estNeuf : boolean;
 
 
 }
