@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-produit-chart',
@@ -6,21 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./produit-chart.component.scss']
 })
 export class ProduitChartComponent {
-  public chartType = 'pie';
+  @Input() chartType : string; //= 'pie';
 
-  public chartDatasets: Array<any> = [
-    {data: [ 100, 40, 120], label: 'My First dataset'}
-  ];
+  @Input() chartDatasets: Array<any> ;
 
-  public chartLabels: Array<any> = [ 'Yellow', 'Grey', 'Dark Grey'];
+  @Input() chartLabels: Array<any> ; //= [ 'Yellow', 'Grey', 'Dark Grey'];
 
-  public chartColors: Array<any> = [
+  @Input() chartColors: Array<any> ; /*= [
     {
       backgroundColor: [ '#FDB45C', '#949FB1', '#4D5360'],
       hoverBackgroundColor: [ '#FFC870', '#A8B3C5', '#616774'],
       borderWidth: 2,
     }
-  ];
+  ];*/
 
   public chartOptions: any = {
     responsive: true

@@ -8,23 +8,23 @@ import {ResultatLoiPinelDTO} from "./resultat-loiPinel-dto";
 
 export class DossierSimulationDTO {
 
-    produitImmobilierDTO : ProduitImmobilierDTO;
+  public produitImmobilierDTO: ProduitImmobilierDTO;
 
-    resultatLoiPinel6DTO : ResultatLoiPinelDTO;
+  public resultatLoiPinel6DTO: ResultatLoiPinelDTO;
 
-  resultatLoiPinel9DTO : ResultatLoiPinelDTO;
+  public resultatLoiPinel9DTO: ResultatLoiPinelDTO;
 
-  resultatLoiPinel12DTO : ResultatLoiPinelDTO;
+  public resultatLoiPinel12DTO: ResultatLoiPinelDTO;
 
-  resultatLmnpReelDto : ResultatLmnpDto;
+  public resultatLmnpReelDto: ResultatLmnpDto;
 
-  resultatLmnpMicroDto : ResultatLmnpDto;
+  public resultatLmnpMicroDto: ResultatLmnpDto;
 
-  resultatMhDto : ResultatMhDTO;
+  public resultatMhDto: ResultatMhDTO;
 
-  resultatMalrauxDTO : ResultatMalrauxDTO;
+  public resultatMalrauxDTO: ResultatMalrauxDTO;
 
-  resultatBouvardDTO : ResultatBouvardDTO;
+  public resultatBouvardDTO: ResultatBouvardDTO;
 
-  deficitFoncierDTO : DeficitFoncierDTO;
+  public deficitFoncierDTO: DeficitFoncierDTO;
 }

@@ -16,13 +16,12 @@ export class ProduitImmobilierDetailsService {
   constructor(private http: HttpClient) {
   }
 
-  getDetailsProduit(id: number): Observable<DossierSimulationDTO> {
+  getDetailsProduit(id: number): Observable<any> {
     const headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
     headers.append('Access-Control-Allow-Origin: *', 'utf-8');
     const options = {headers};/*192.168.99.100*/
-    return this.http.get(`${this.PRODUIT_API}/${id}`, options).pipe(
-      map((data: any) => data.map((item: any) => item as DossierSimulationDTO
-      )),
-    );
+   // return this.http.get(`${this.PRODUIT_API}/${id}`,options);
+    return this.http.get(`${this.PRODUIT_API}/${id}`,options)
+      .pipe(map((result: DossierSimulationDTO) => result as DossierSimulationDTO));
   }
 }

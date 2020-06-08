@@ -1,8 +1,8 @@
 export class ResultatBouvardDTO {
 
-  montantTvaRecuperee: number;
-  EconomyImpots: number;
-  gainImpots9Ans: number;
-  effortEpargne: number;
-  effortEpargneSansTVA: number;
+  public montantTvaRecuperee: number;
+  public EconomyImpots: number;
+  public gainImpots9Ans: number;
+  public effortEpargne: number;
+  public effortEpargneSansTVA: number;
 }

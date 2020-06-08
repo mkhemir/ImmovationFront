@@ -16,6 +16,8 @@ import { ProductLightComponent } from './product-light/product-light.component';
 import { MDBBootstrapModule, ChartsModule } from 'angular-bootstrap-md';
 import { ProduitCardComponent } from './produit-immobilier-details/produit-card/produit-card.component';
 import { ProduitChartComponent } from './produit-immobilier-details/produit-card/produit-chart/produit-chart.component';
+import { ProduitCardPinelComponent } from './produit-immobilier-details/produit-card/produit-card-pinel/produit-card-pinel.component';
+import { ProduitCardLmnpComponent } from './produit-immobilier-details/produit-card/produit-card-lmnp/produit-card-lmnp.component';
 
 registerLocaleData(localeFr, 'fr');
 declare var $: any;
@@ -31,7 +33,9 @@ console.log(`jQuery version: ${$.fn.jquery}`);
     HeaderComponent,
     ProductLightComponent,
     ProduitCardComponent,
-    ProduitChartComponent
+    ProduitChartComponent,
+    ProduitCardPinelComponent,
+    ProduitCardLmnpComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,7 @@ console.log(`jQuery version: ${$.fn.jquery}`);
     })
   ],
   providers: [],
+  entryComponents: [ProduitCardPinelComponent, ProduitCardLmnpComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

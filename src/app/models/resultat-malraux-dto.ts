@@ -1,14 +1,14 @@
 export class ResultatMalrauxDTO {
 
-  tauxReductionImpots : number;
+  public tauxReductionImpots : number;
 
-  coutTravaux : number;
+  public coutTravaux : number;
 
-  economyImpots : number;
+  public economyImpots : number;
 
-  dureeTravaux : number;
+  public dureeTravaux : number;
 
-  effortEpargne : number;
+  public effortEpargne : number;
 
-  listEffortEpargnes : number[];
+  public listEffortEpargnes : number[];
 }

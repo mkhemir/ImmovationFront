@@ -1,11 +1,11 @@
 export class DeficitFoncierDTO {
 
-  revenusLoyer : number;
-  interetEmprunt : number;
-  chargesNonFinanciere : number;
-  deficit : number;
-  economyImpots : number;
-  effortEpargne : number;
-  gainImpots : Map<number, number>;
-  listEffortEpargne : Map<number, number>;
+  public revenusLoyer : number;
+  public interetEmprunt : number;
+  public chargesNonFinanciere : number;
+  public deficit : number;
+  public economyImpots : number;
+  public effortEpargne : number;
+  public gainImpots : Map<number, number>;
+  public listEffortEpargne : Map<number, number>;
 }

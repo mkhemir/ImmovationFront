@@ -1,10 +1,10 @@
 export class ResultatLoiPinelDTO {
 
-  loyerMaximum: number;
-  reductionImpots: number;
-  montantEmprunt: number;
-  economyImpots: number;
-  mensualiteCredit: number;
-  fraisAnnexe: number;
-  effortEpargne: number;
+  public loyerMaximum: number;
+  public reductionImpots: number;
+  public montantEmprunt: number;
+  public economyImpots: number;
+  public mensualiteCredit: number;
+  public fraisAnnexe: number;
+  public effortEpargne: number;
 }

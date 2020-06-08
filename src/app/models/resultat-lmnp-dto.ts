@@ -1,15 +1,15 @@
 export class ResultatLmnpDto {
 
-  loyerAnnuel: number;
-  amortissementImmobilier: number;
-  amortissementMobilier: number;
-  InteretEmprunt: number;
-  autresCharges: number;
-  abbatement50: number;
-  impots: number;
-  totalCharges: number;
-  totalImpots: number;
-  Resultat: number;
-  economyImpots: number;
-  effortEpargne: number;
+  public loyerAnnuel: number;
+  public amortissementImmobilier: number;
+  public amortissementMobilier: number;
+  public InteretEmprunt: number;
+  public autresCharges: number;
+  public abbatement50: number;
+  public impots: number;
+  public totalCharges: number;
+  public totalImpots: number;
+  public Resultat: number;
+  public economyImpots: number;
+  public effortEpargne: number;
 }

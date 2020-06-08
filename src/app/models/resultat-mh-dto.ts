@@ -1,26 +1,26 @@
 export class ResultatMhDTO {
 
-   tmiInv : number;
+  public tmiInv : number;
 
-   tmiHab : number;
+  public tmiHab : number;
 
-   dureeXenorationImpotInv : number;
+  public dureeXenorationImpotInv : number;
 
-   dureeXenorationImpotHab : number;
+  public dureeXenorationImpotHab : number;
 
-   mensualiteCredit : number;
+  public mensualiteCredit : number;
 
-   coutTravaux : number;
+  public coutTravaux : number;
 
-   economyImpotsInvest : number;
+  public economyImpotsInvest : number;
 
-   economyImpotsHabit : number;
+  public economyImpotsHabit : number;
 
-   dureeTravaux : number;
+  public  dureeTravaux : number;
 
-   effortEpargne : number;
+  public effortEpargne : number;
 
-   moyenneEffortEpargneHabit : number;
+  public moyenneEffortEpargneHabit : number;
 
 
 }
