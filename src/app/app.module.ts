@@ -18,6 +18,10 @@ import { ProduitCardComponent } from './produit-immobilier-details/produit-card/
 import { ProduitChartComponent } from './produit-immobilier-details/produit-card/produit-chart/produit-chart.component';
 import { ProduitCardPinelComponent } from './produit-immobilier-details/produit-card/produit-card-pinel/produit-card-pinel.component';
 import { ProduitCardLmnpComponent } from './produit-immobilier-details/produit-card/produit-card-lmnp/produit-card-lmnp.component';
+import { ProduitCardBouvardComponent } from './produit-immobilier-details/produit-card/produit-card-bouvard/produit-card-bouvard.component';
+import { ProduitCardMalrauxComponent } from './produit-immobilier-details/produit-card/produit-card-malraux/produit-card-malraux.component';
+import { ProduitCardMhComponent } from './produit-immobilier-details/produit-card/produit-card-mh/produit-card-mh.component';
+import { ProduitCardDfComponent } from './produit-immobilier-details/produit-card/produit-card-df/produit-card-df.component';
 
 registerLocaleData(localeFr, 'fr');
 declare var $: any;
@@ -35,7 +39,11 @@ console.log(`jQuery version: ${$.fn.jquery}`);
     ProduitCardComponent,
     ProduitChartComponent,
     ProduitCardPinelComponent,
-    ProduitCardLmnpComponent
+    ProduitCardLmnpComponent,
+    ProduitCardBouvardComponent,
+    ProduitCardMalrauxComponent,
+    ProduitCardMhComponent,
+    ProduitCardDfComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +60,7 @@ console.log(`jQuery version: ${$.fn.jquery}`);
     })
   ],
   providers: [],
-  entryComponents: [ProduitCardPinelComponent, ProduitCardLmnpComponent],
+  entryComponents: [ProduitCardPinelComponent, ProduitCardLmnpComponent, ProduitCardBouvardComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

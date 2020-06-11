@@ -12,4 +12,5 @@ export class ResultatLmnpDto {
   public Resultat: number;
   public economyImpots: number;
   public effortEpargne: number;
+  public mensualiteCredit :number;
 }

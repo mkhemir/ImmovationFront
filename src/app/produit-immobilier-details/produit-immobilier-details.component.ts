@@ -15,6 +15,8 @@ import {ProduitCardPinelComponent} from "./produit-card/produit-card-pinel/produ
 import {ResultatLoiPinelDTO} from "../models/resultat-loiPinel-dto";
 import {ResultatLmnpDto} from "../models/resultat-lmnp-dto";
 import {ProduitCardLmnpComponent} from "./produit-card/produit-card-lmnp/produit-card-lmnp.component";
+import {ResultatBouvardDTO} from "../models/resultat-bouvard-dto";
+import {ProduitCardBouvardComponent} from "./produit-card/produit-card-bouvard/produit-card-bouvard.component";
 
 declare var $: any;
 
@@ -217,36 +219,36 @@ export class ProduitImmobilierDetailsComponent implements OnInit {
     this.entry3.clear();
     this.entry4.clear();
     this.entry5.clear();
-  //  this.entry6.clear();
+    this.entry6.clear();
   //  this.entry7.clear();
    // this.entry8.clear();
   //  this.entry9.clear();
     const array = Array.from(this.mapSimulation.keys());
     const factory1 = this.resolver.resolveComponentFactory(this.getComponentType(array[0] + ''));
     this.componentRef1 = this.entry1.createComponent(factory1);
-    this.fillComponent(array[0] + '', this.componentRef1.instance);
+    this.fillComponent(array[0] + '', this.componentRef1.instance, 1);
 
     const factory2 = this.resolver.resolveComponentFactory(this.getComponentType(array[1] + ''));
     this.componentRef2 = this.entry2.createComponent(factory2);
-    this.fillComponent(array[1] + '', this.componentRef2.instance);
+    this.fillComponent(array[1] + '', this.componentRef2.instance, 2);
 
     const factory3 = this.resolver.resolveComponentFactory(this.getComponentType(array[2] + ''));
     this.componentRef3 = this.entry3.createComponent(factory3);
-    this.fillComponent(array[2] + '', this.componentRef3.instance);
+    this.fillComponent(array[2] + '', this.componentRef3.instance, 3);
 
     const factory4 = this.resolver.resolveComponentFactory(this.getComponentType(array[3] + ''));
     this.componentRef4 = this.entry4.createComponent(factory4);
-    this.fillComponent(array[3] + '', this.componentRef4.instance);
+    this.fillComponent(array[3] + '', this.componentRef4.instance, 4);
 
     const factory5 = this.resolver.resolveComponentFactory(this.getComponentType(array[4] + ''));
     this.componentRef5 = this.entry5.createComponent(factory5);
-    this.fillComponent(array[4] + '', this.componentRef5.instance);
+    this.fillComponent(array[4] + '', this.componentRef5.instance, 5);
 
-   /* const factory6 = this.resolver.resolveComponentFactory(this.getComponentType(array[5] + ''));
+    const factory6 = this.resolver.resolveComponentFactory(this.getComponentType(array[5] + ''));
     this.componentRef6 = this.entry6.createComponent(factory6);
-    this.fillComponent(array[5] + '', this.componentRef6.instance);
+    this.fillComponent(array[5] + '', this.componentRef6.instance, 6);
 
-    const factory7 = this.resolver.resolveComponentFactory(this.getComponentType(array[6] + ''));
+    /* const factory7 = this.resolver.resolveComponentFactory(this.getComponentType(array[6] + ''));
     this.componentRef7= this.entry7.createComponent(factory7);
     this.fillComponent(array[6] + '', this.componentRef7.instance);
 
@@ -276,7 +278,7 @@ export class ProduitImmobilierDetailsComponent implements OnInit {
       return ProduitCardLmnpComponent;
     }
     if (type === 'BOUVARD') {
-      return ProduitCardPinelComponent;
+      return ProduitCardBouvardComponent;
     }
     if (type === 'MH') {
       return ProduitCardPinelComponent;
@@ -290,32 +292,43 @@ export class ProduitImmobilierDetailsComponent implements OnInit {
   }
 
 
-  fillComponent(type: string, componentRef: any) {
+  fillComponent(type: string, componentRef: any, rang : number) {
     if (type === 'PINEL6') {
-      this.fillComponentPinel(componentRef , this.dossier.resultatLoiPinel6DTO, 'Pinel de 6 ans');
+      this.fillComponentPinel(componentRef , this.dossier.resultatLoiPinel6DTO, 'Pinel de 6 ans', rang);
     }
     if (type === 'PINEL9') {
-      this.fillComponentPinel(componentRef , this.dossier.resultatLoiPinel9DTO, 'Pinel de 9 ans');
+      this.fillComponentPinel(componentRef , this.dossier.resultatLoiPinel9DTO, 'Pinel de 9 ans', rang);
     }
     if (type === 'PINEL12') {
-      this.fillComponentPinel(componentRef , this.dossier.resultatLoiPinel12DTO, 'Pinel de 12 ans');
+      this.fillComponentPinel(componentRef , this.dossier.resultatLoiPinel12DTO, 'Pinel de 12 ans', rang);
     }
     if (type === 'LMNP_REEL') {
-      this.fillComponentLmnp(componentRef , this.dossier.resultatLmnpReelDto, 'LMNP Reel');
+      this.fillComponentLmnp(componentRef , this.dossier.resultatLmnpReelDto, 'LMNP Reel', rang);
     }
     if (type === 'LMNP_MICRO') {
-      this.fillComponentLmnp(componentRef , this.dossier.resultatLmnpMicroDto, 'LMNP Micro');
+      this.fillComponentLmnp(componentRef , this.dossier.resultatLmnpMicroDto, 'LMNP Micro', rang);
+    }
+    if (type === 'BOUVARD') {
+      this.fillComponentBouvard(componentRef , this.dossier.resultatBouvardDTO, rang);
     }
   }
 
-  fillComponentPinel(componentRef: any, resultatLoiPinelDTO: ResultatLoiPinelDTO , pinelType : string) {
+  fillComponentPinel(componentRef: any, resultatLoiPinelDTO: ResultatLoiPinelDTO , pinelType : string, rang : number) {
     componentRef.pinel = resultatLoiPinelDTO;
     componentRef.cardTitle = pinelType;
+    componentRef.rang = rang;
   }
 
-  fillComponentLmnp(componentRef: any, resultatLmnpDto: ResultatLmnpDto , lmnpType : string) {
+  fillComponentLmnp(componentRef: any, resultatLmnpDto: ResultatLmnpDto , lmnpType : string, rang : number) {
     componentRef.lmnp = resultatLmnpDto;
     componentRef.cardTitle = lmnpType;
+    componentRef.rang = rang;
+  }
+
+  fillComponentBouvard(componentRef: any, resultatBouvardDTO: ResultatBouvardDTO, rang : number) {
+    componentRef.bouvard = resultatBouvardDTO;
+    componentRef.cardTitle = 'BOUVARD';
+    componentRef.rang = rang;
   }
 
 

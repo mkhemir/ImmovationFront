@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ProduitImmobilierDTO} from "../../../models/produit-immobilier-dto";
 import {DossierSimulationDTO} from "../../../models/dossier-simulation-dto";
 import {ResultatLoiPinelDTO} from "../../../models/resultat-loiPinel-dto";
+import {ResultatBouvardDTO} from "../../../models/resultat-bouvard-dto";
 
 @Component({
   selector: 'app-produit-card-pinel',
@@ -11,6 +12,7 @@ import {ResultatLoiPinelDTO} from "../../../models/resultat-loiPinel-dto";
 export class ProduitCardPinelComponent implements OnInit {
   @Input() pinel: ResultatLoiPinelDTO;
   @Input() cardTitle : string;
+  @Input() rang : number;
   public chartDatasets: Array<any> ;
   public chartType : string;
   public chartLabels: Array<any> ; //= [ 'Yellow', 'Grey', 'Dark Grey'];
@@ -20,16 +22,17 @@ export class ProduitCardPinelComponent implements OnInit {
   ngOnInit() {
     this.chartType = 'pie';
     this.chartDatasets = [
-      {data: [ this.pinel.loyerMaximum, this.pinel.economyImpots, this.pinel.mensualiteCredit], label: 'My First dataset'}
+      {data: [ this.pinel.economyImpots, this.pinel.mensualiteCredit, this.pinel.loyerMaximum, this.pinel.fraisAnnexe], label: 'Pinel'}
     ];
     this.chartLabels = [];
     this.chartColors = [
       {
-        backgroundColor: [ '#FDB45C', '#949FB1', '#4D5360'],
-        hoverBackgroundColor: [ '#FFC870', '#A8B3C5', '#616774'],
-        borderWidth: 2,
+        backgroundColor: [ '#ECB608', '#BCBCBC', '#212121', '#3F729B'],
+        hoverBackgroundColor: [ '#FFC870', '#A8B3C5', '#616774', '#3F729B'],
+        borderWidth: 3,
       }
     ];
   }
-
 }
+
+

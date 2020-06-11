@@ -1,15 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ResultatLoiPinelDTO} from "../../../models/resultat-loiPinel-dto";
-import {ResultatLmnpDto} from "../../../models/resultat-lmnp-dto";
+import {ResultatBouvardDTO} from "../../../models/resultat-bouvard-dto";
 
 @Component({
-  selector: 'app-produit-card-lmnp',
-  templateUrl: './produit-card-lmnp.component.html',
-  styleUrls: ['./produit-card-lmnp.component.scss']
+  selector: 'app-produit-card-bouvard',
+  templateUrl: './produit-card-bouvard.component.html',
+  styleUrls: ['./produit-card-bouvard.component.scss']
 })
-export class ProduitCardLmnpComponent implements OnInit {
+export class ProduitCardBouvardComponent implements OnInit {
+  @Input() bouvard: ResultatBouvardDTO;
   @Input() cardTitle : string;
-  @Input() lmnp: ResultatLmnpDto;
   @Input() rang : number;
   public chartDatasets: Array<any> ;
   public chartType : string;
@@ -20,7 +19,7 @@ export class ProduitCardLmnpComponent implements OnInit {
   ngOnInit() {
     this.chartType = 'pie';
     this.chartDatasets = [
-      {data: [ this.lmnp.economyImpots, this.lmnp.mensualiteCredit, this.lmnp.loyerAnnuel], label: 'Bouvard'}
+      {data: [ this.bouvard.economyImpots, this.bouvard.mensualiteCredit, this.bouvard.montantTvaRecuperee], label: 'Bouvard'}
     ];
     this.chartLabels = [];
     this.chartColors = [

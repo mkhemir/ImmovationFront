@@ -11,4 +11,6 @@ export class ResultatMalrauxDTO {
   public effortEpargne : number;
 
   public listEffortEpargnes : number[];
+
+  public mensualiteCredit :number;
 }

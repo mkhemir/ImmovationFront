@@ -8,4 +8,5 @@ export class DeficitFoncierDTO {
   public effortEpargne : number;
   public gainImpots : Map<number, number>;
   public listEffortEpargne : Map<number, number>;
+  public mensualiteCredit :number;
 }
