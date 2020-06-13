@@ -1,47 +1,72 @@
-<!--Card-->
-<div class="card card-cadre z-depth-1">
+<!--Grid column-->
 
-  <div class="d-flex flex-row">
-    <div class="justify-content-start d-inline-flex ml-3"><p class="card-title text-titre mt-2">{{rang}}.</p> <p class="card-title text-titre mt-2 ml-3"> {{cardTitle}}</p></div>
-    <div class="flex-fill mt-2 mr-3 card-title text-titre" style="text-align: right"><i class="fa fa-eur" aria-hidden="true"></i> {{pinel.effortEpargne}} / mois</div>
-  </div>
-  <!--Card image-->
-  <div class="view overlay">
-    <app-produit-chart [chartType]="chartType" [chartDatasets]="chartDatasets" [chartLabels]="chartLabels" [chartColors]="chartColors"></app-produit-chart>
-  </div>
-  <!--/.Card image-->
+<div class="card card-flip">
+  <div class="card-cadre card-front">
 
-  <!--Card content-->
-  <div class="card-body">
-    <!--Title-->
     <div class="d-flex flex-row">
-      <div class="justify-content-start d-inline-flex"><span class="dot_grey mt-1"></span><p class="text-card-14 ml-2"> Mensualités crédit</p></div>
-      <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{pinel.mensualiteCredit}}</div>
+      <div class="justify-content-start d-inline-flex ml-3"><p class="card-title text-titre mt-2">{{rang}}.</p>
+        <p class="card-title text-titre mt-2 ml-3"> {{cardTitle}}</p></div>
+      <div class="flex-fill mt-2 mr-3 card-title text-titre" style="text-align: right"><i class="fa fa-eur"
+                                                                                          aria-hidden="true"></i> {{pinel.effortEpargne}}
+        / mois
+      </div>
     </div>
-    <div class="d-flex flex-row">
-      <div class="justify-content-start d-inline-flex"><span class="dot_black mt-1"></span><p class="text-card-14 ml-2">TVA Récupérée</p></div>
-      <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{pinel.loyerMaximum}}</div>
+    <!--Card image-->
+    <div class="view overlay">
+      <app-produit-chart [chartType]="chartType" [chartDatasets]="chartDatasets" [chartLabels]="chartLabels"
+                         [chartColors]="chartColors"></app-produit-chart>
     </div>
-    <div class="d-flex flex-row">
-      <div class="justify-content-start d-inline-flex"><span class="dot_gold mt-1"></span><p class="text-card-14 ml-2">Total Economie d'impots</p></div>
-      <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{pinel.economyImpots}}</div>
-    </div>
-    <div class="d-flex flex-row">
-      <div class="justify-content-start d-inline-flex"><span class="dot_gold mt-1"></span><p class="text-card-14 ml-2">Frais annexes</p></div>
-      <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{pinel.fraisAnnexe}}</div>
-    </div>
+    <!--/.Card image-->
 
-    <hr>
-    <!--Text-->
-    <div class="d-flex flex-row">
-      <div class="justify-content-start text-left mt-1"><p class="text-card-14">Soit Votre participation moyenne <br> mensuelle investie dans l'opération</p></div>
-      <div class="flex-fill text-card-14 mt-1" style="text-align: right"><br>€ {{pinel.effortEpargne}}
+    <!--Card content-->
+    <div class="card-body">
+      <!--Title-->
+      <div class="d-flex flex-row">
+        <div class="justify-content-start d-inline-flex"><span class="dot_grey mt-1"></span>
+          <p class="text-card-14 ml-2"> Mensualités crédit</p></div>
+        <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{pinel.mensualiteCredit}}</div>
+      </div>
+      <div class="d-flex flex-row">
+        <div class="justify-content-start d-inline-flex"><span class="dot_black mt-1"></span>
+          <p class="text-card-14 ml-2">TVA Récupérée</p></div>
+        <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{pinel.loyerMaximum}}</div>
+      </div>
+      <div class="d-flex flex-row">
+        <div class="justify-content-start d-inline-flex"><span class="dot_gold mt-1"></span>
+          <p class="text-card-14 ml-2">Total Economie d'impots</p></div>
+        <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{pinel.economyImpots}}</div>
+      </div>
+      <div class="d-flex flex-row">
+        <div class="justify-content-start d-inline-flex"><span class="dot_gold mt-1"></span>
+          <p class="text-card-14 ml-2">Frais annexes</p></div>
+        <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{pinel.fraisAnnexe}}</div>
+      </div>
+
+      <hr>
+      <!--Text-->
+      <div class="d-flex flex-row">
+        <div class="justify-content-start text-left mt-1"><p class="text-card-14">Soit Votre participation moyenne <br>
+          mensuelle investie dans l'opération</p></div>
+        <div class="flex-fill text-card-14 mt-1" style="text-align: right"><br>€ {{pinel.effortEpargne}}
+        </div>
       </div>
     </div>
   </div>
-  <!--/.Card content-->
-
+  <div class="card-back bg-white">
+    <div class="card-body z-depth-1">
+      <h3 class="text-titre">Qu'est ce qui est le pinel de 6 ans?</h3>
+      <p class="text-card-14" style="text-align: left">L'investissement locatif Pinel, modifié par l'article 68 de la loi de finances pour 2018, ouvre droit à une réduction d’impôt calculée sur le prix d'achat des logements neufs
+      <br>
+        Le logement doit être loué nu, à un prix inférieur d'environ 20% au marché du secteur concerné, pendant six
+        ou neuf ans prorogeables. Soit un loyer max pour cet appartement de {{pinel.loyerMaximum}} .
+        <br>
+        Le propriétaire s'engage sur une durée initiale de 6 ans, l'avantage fiscal est croissant et réparti sur toute la durée d'engagement,
+        dans la limite d'un plafond global de 300 000 euros et de 5 500 euros par
+        mètre carré : 12% du prix d'achat du bien sur six ans.
+        <br>
+        Nous estimons que {{cardTitle}} {{getChoice()}}. Nous vous invitons à consulter ces rapports en détails.
+      </p>
+      <a href="#" class="btn btn-outline-secondary ">Détails</a>
+    </div>
+  </div>
 </div>
-<!--/.Card-->
-
-<!--Grid column-->

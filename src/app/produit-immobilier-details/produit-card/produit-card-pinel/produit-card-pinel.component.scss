@@ -4,13 +4,13 @@
 }
 
 .text-titre {
-  font: bold 16px/25px Poppins;
+  font: bold 14px/25px Poppins;
   letter-spacing: 0.8px;
   color: #171717DE;
 }
 
 .text-card-14 {
-  font: 14px/21px Poppins Regular;
+  font: 12px/21px Poppins ;
   letter-spacing: 0.7px;
   color: #000000;
   opacity: 1;
@@ -43,7 +43,33 @@
 .dot_pink {
   height: 12px;
   width: 12px;
-  background-color: #3F729B;
+  background-color: #f44336;
   border-radius: 50%;
   display: inline-block;
 }
+
+.card-flip > div {
+  backface-visibility: hidden;
+  transition: transform 400ms;
+  transition-timing-function: linear;
+  transform-style: preserve-3d;
+}
+
+.card-front {
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  position: absolute;
+}
+
+.card-flip:hover .card-front {
+  transform: rotateY(-180deg);
+}
+
+.card-flip:hover .card-back {
+  transform: rotateY(0deg);
+}
+
+

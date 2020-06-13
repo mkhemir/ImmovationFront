@@ -63,17 +63,17 @@
         </div>
       </div>
     </nav> -->
-    <hr color="blue" width="100%">
-    <nav style="position:relative;" class="navigation">
-      <ul class="menu">
+
+    <nav style="position:relative; background-color:#F8F8F8 " class="navigation">
+      <ul class="menu" style="padding-top: 15px">
         <li><a id="menuHorizon1" (click)="applyClickCss($event)" href="javascript:void(0)">Description</a></li>
         <li><a id="menuHorizon2" class="expanded" (click)="applyClickCss($event)"
                href="javascript:void(0)">Mensualités</a></li>
-        <li><a id="menuHorizon3" (click)="applyClickCss($event)" href="javascript:void(0)">Ameneties</a></li>
-        <li><a id="menuHorizon4" (click)="applyClickCss($event)" href="javascript:void(0)">Neighborhood and Transit</a>
+        <li><a id="menuHorizon3" (click)="applyClickCss($event)" href="javascript:void(0)">Stratégie Fiscale</a></li>
+        <li><a id="menuHorizon4" (click)="applyClickCss($event)" href="javascript:void(0)">Voisinage</a>
         </li>
-        <li><a id="menuHorizon5" (click)="applyClickCss($event)" href="javascript:void(0)">Property History</a></li>
-        <li><a id="menuHorizon6" (click)="applyClickCss($event)" href="javascript:void(0)">Agency</a></li>
+        <li><a id="menuHorizon5" (click)="applyClickCss($event)" href="javascript:void(0)">Historique</a></li>
+        <li><a id="menuHorizon6" (click)="applyClickCss($event)" href="javascript:void(0)">Agence</a></li>
 
       </ul>
     </nav>
@@ -116,25 +116,31 @@
     <div class="row">
       <div class="col-md-12">
 
-        <article class="article mt-3">
-          <div class="article__content text-left">No demo without Lorem ipsum text. Lorem ipsum dolor sit amet,
-            consectetur
-            adipisicing
-            elit. Provident tenetur delectus fuga et, doloribus rerum! Aperiam voluptate mollitia rerum necessitatibus
-            repudiandae asperiores doloremque deleniti praesentium, dolorem maxime, quia, libero. Maiores? Lorem ipsum
-            dolor
-            sit amet, consectetur adipisicing elit. Iste distinctio quidem, obcaecati aperiam! Distinctio porro pariatur
-            labore
-            veniam deserunt mollitia consectetur unde voluptatem blanditiis eaque aperiam, sequi sed vero debitis!
-          </div>
-        </article>
+
+          <p class="text-pop-13 mt-5">Dans une résidence de caractère idéalement située à proximité des transports et du centre-ville, Century 21 vous présente en exclusivité ce magnifique 4 pièces. Très lumineux et fonctionnel l'appartement se compose d'une entrée desservant penderie, cuisine avec cellier, belle pièce de vie de plus de 30m² (possible de remettre une 3ème chambre). Côté nuit, couloir distribuant placards, salle d'eau, WC et 2 chambres. Cave, parking et balcon. Très belles prestations. Environnement calme et verdoyant.
+          </p>
+
 
       </div>
     </div>
-
+<div>
+  <p class="text-pop-18-bold mt-5">
+    Mensualités
+  </p>
+</div>
+    <div class="row">
+      <div class="col-6">
+        <p class="text-pop-13">
+          La copropriété inclut 14 lots pour un montant annuel de la quote-part du budget prévisionnel des dépenses courantes de 4 200 €.
+        </p>
+      </div>
+      <div class="col-6">
+<app-user-card></app-user-card>
+      </div>
+    </div>
   </section>
-  <!--Section: Content-->
 
+  <!--Section: Content-->
   <section class="text-center">
     <mdb-carousel [isControls]="true" [animation]="'slide'" [interval]="'0'">
       <div class="row">
@@ -162,6 +168,22 @@
           </div>
           <div class="col-4 pb-2">
             <template #option6></template>
+          </div>
+
+        </mdb-carousel-item>
+      </div>
+
+      <div class="row">
+        <mdb-carousel-item>
+
+          <div class="col-4 pb-2">
+            <template #option7></template>
+          </div>
+          <div class="col-4 pb-2">
+            <template #option8></template>
+          </div>
+          <div class="col-4 pb-2">
+            <template #option9></template>
           </div>
 
         </mdb-carousel-item>

@@ -27,11 +27,23 @@ export class ProduitCardPinelComponent implements OnInit {
     this.chartLabels = [];
     this.chartColors = [
       {
-        backgroundColor: [ '#ECB608', '#BCBCBC', '#212121', '#3F729B'],
-        hoverBackgroundColor: [ '#FFC870', '#A8B3C5', '#616774', '#3F729B'],
+        backgroundColor: [ '#ECB608', '#BCBCBC', '#212121', '#f44336'],
+        hoverBackgroundColor: [ '#FFC870', '#A8B3C5', '#616774', '#f44336'],
         borderWidth: 3,
       }
     ];
+  }
+
+  getChoice(): string {
+    if(this.rang === 1) {
+      return 'le meilleur choix pour vous';
+    } else if (this.rang > 1 && this.rang <= 4) {
+      return 'est un bon choix pour vous.'
+    } else if (this.rang > 4 && this.rang <= 7) {
+      return 'n`est pas un bon choix pour vous.'
+    } else {
+      return 'est un mauvais choix;'
+    }
   }
 }
 

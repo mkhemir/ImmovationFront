@@ -1,1 +1,44 @@
-<p>produit-card-df works!</p>
+<!--Card-->
+<div class="card card-cadre">
+
+  <div class="d-flex flex-row">
+    <div class="justify-content-start d-inline-flex ml-3"><p class="card-title text-titre mt-2">{{rang}}.</p> <p class="card-title text-titre mt-2 ml-3"> {{cardTitle}}</p></div>
+    <div class="flex-fill mt-2 mr-3 card-title text-titre" style="text-align: right"><i class="fa fa-eur" aria-hidden="true"></i> {{deficit.effortEpargne}} / mois</div>
+  </div>
+  <!--Card image-->
+  <div class="view overlay">
+    <app-produit-chart [chartType]="chartType" [chartDatasets]="chartDatasets" [chartLabels]="chartLabels" [chartColors]="chartColors"></app-produit-chart>
+  </div>
+  <!--/.Card image-->
+
+  <!--Card content-->
+  <div class="card-body">
+    <!--Title-->
+    <div class="d-flex flex-row">
+      <div class="justify-content-start d-inline-flex"><span class="dot_grey mt-1"></span><p class="text-card-14 ml-2"> Mensualités crédit</p></div>
+      <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{deficit.mensualiteCredit}}</div>
+    </div>
+    <div class="d-flex flex-row">
+      <div class="justify-content-start d-inline-flex"><span class="dot_black mt-1"></span><p class="text-card-14 ml-2">TVA Récupérée</p></div>
+      <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{deficit.revenusLoyer}}</div>
+    </div>
+    <div class="d-flex flex-row">
+      <div class="justify-content-start d-inline-flex"><span class="dot_gold mt-1"></span><p class="text-card-14 ml-2">Total Economie d'impots</p></div>
+      <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{deficit.economyImpots}}</div>
+    </div>
+
+    <hr>
+    <!--Text-->
+    <div class="d-flex flex-row">
+      <div class="justify-content-start text-left mt-1"><p class="text-card-14">Soit Votre participation moyenne <br> mensuelle investie dans l'opération</p></div>
+      <div class="flex-fill text-card-14 mt-1" style="text-align: right"><br>€ {{deficit.effortEpargne}}
+      </div>
+    </div>
+  </div>
+  <!--/.Card content-->
+
+</div>
+<!--/.Card-->
+
+<!--Grid column-->
+

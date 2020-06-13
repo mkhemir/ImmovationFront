@@ -82,14 +82,14 @@ ul {
     margin: 0;
     padding: 0;
     display: inline-block;
-    
+
 }
 
 #{$responsiveNavigationClass} ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    
+
 }
 
 #{$responsiveNavigationClass} .menu li {
@@ -118,14 +118,10 @@ ul {
 }
 .menu a {
   position: relative;       /* pour servir de référent */
-  padding: 0 .5em;
-  text-decoration: none;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: $main-menu-font-family;
-  letter-spacing: 1px;
-  color: black;
+  font: Regular 14px/21px Poppins;
+  letter-spacing: 0.7px;
+  color: #1C1200;
+  opacity: 1;
 }
 
 .menu a.expanded {
@@ -171,7 +167,7 @@ li a:hover {
 
 .menu a.expanded::before {
   right: .5em;
-  left: .5em;  
+  left: .5em;
 }
 
 .responsive-navigation {
@@ -201,16 +197,38 @@ nav {
 
 @media only screen and (max-width: 991px) {
   .navigation {
-    display: none; 
-  } 
+    display: none;
+  }
 }
 @media only screen and (min-width: 992px) {
   .responsive-navigation {
-    display: none; 
-  } 
+    display: none;
+  }
 }
 
 .navigation ul { display: table; width: 100%; }
 .navigation ul > li {display: table-cell; }
 
 /******** fin Menu ******/
+
+.text-pop-13 {
+  font: 13px/21px Poppins ;
+  text-align:left;
+  letter-spacing: 0.7px;
+  color: #000000;
+  opacity: 1;
+}
+.text-pop-18-bold {
+  text-align: left;
+  font: Bold 18px/27px Poppins;
+  letter-spacing: 0.9px;
+  color: #171717DE;
+}
+
+.text-pop-14 {
+  text-align: left;
+  font: 14px/21px Poppins;
+  letter-spacing: 0.9px;
+  color: #171717DE;
+}
+

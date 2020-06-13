@@ -17,6 +17,12 @@ import {ResultatLmnpDto} from "../models/resultat-lmnp-dto";
 import {ProduitCardLmnpComponent} from "./produit-card/produit-card-lmnp/produit-card-lmnp.component";
 import {ResultatBouvardDTO} from "../models/resultat-bouvard-dto";
 import {ProduitCardBouvardComponent} from "./produit-card/produit-card-bouvard/produit-card-bouvard.component";
+import {ResultatMhDTO} from "../models/resultat-mh-dto";
+import {ResultatMalrauxDTO} from "../models/resultat-malraux-dto";
+import {DeficitFoncierDTO} from "../models/deficit-foncier-dto";
+import {ProduitCardDfComponent} from "./produit-card/produit-card-df/produit-card-df.component";
+import {ProduitCardMalrauxComponent} from "./produit-card/produit-card-malraux/produit-card-malraux.component";
+import {ProduitCardMhComponent} from "./produit-card/produit-card-mh/produit-card-mh.component";
 
 declare var $: any;
 
@@ -220,9 +226,9 @@ export class ProduitImmobilierDetailsComponent implements OnInit {
     this.entry4.clear();
     this.entry5.clear();
     this.entry6.clear();
-  //  this.entry7.clear();
-   // this.entry8.clear();
-  //  this.entry9.clear();
+    this.entry7.clear();
+    this.entry8.clear();
+    this.entry9.clear();
     const array = Array.from(this.mapSimulation.keys());
     const factory1 = this.resolver.resolveComponentFactory(this.getComponentType(array[0] + ''));
     this.componentRef1 = this.entry1.createComponent(factory1);
@@ -248,17 +254,17 @@ export class ProduitImmobilierDetailsComponent implements OnInit {
     this.componentRef6 = this.entry6.createComponent(factory6);
     this.fillComponent(array[5] + '', this.componentRef6.instance, 6);
 
-    /* const factory7 = this.resolver.resolveComponentFactory(this.getComponentType(array[6] + ''));
+     const factory7 = this.resolver.resolveComponentFactory(this.getComponentType(array[6] + ''));
     this.componentRef7= this.entry7.createComponent(factory7);
-    this.fillComponent(array[6] + '', this.componentRef7.instance);
+    this.fillComponent(array[6] + '', this.componentRef7.instance, 7);
 
     const factory8 = this.resolver.resolveComponentFactory(this.getComponentType(array[7] + ''));
     this.componentRef8 = this.entry8.createComponent(factory8);
-    this.fillComponent(array[7] + '', this.componentRef8.instance);
+    this.fillComponent(array[7] + '', this.componentRef8.instance, 8);
 
     const factory9 = this.resolver.resolveComponentFactory(this.getComponentType(array[8] + ''));
     this.componentRef9 = this.entry9.createComponent(factory9);
-    this.fillComponent(array[8] + '', this.componentRef9.instance);*/
+    this.fillComponent(array[8] + '', this.componentRef9.instance, 9);
   }
 
   getComponentType(type: string): any {
@@ -281,13 +287,13 @@ export class ProduitImmobilierDetailsComponent implements OnInit {
       return ProduitCardBouvardComponent;
     }
     if (type === 'MH') {
-      return ProduitCardPinelComponent;
+      return ProduitCardMhComponent;
     }
     if (type === 'MALRAUX') {
-      return ProduitCardPinelComponent;
+      return ProduitCardMalrauxComponent;
     }
-    if (type === 'DEFICIR_FONCIER') {
-      return ProduitCardPinelComponent;
+    if (type === 'DEFICIT_FONCIER') {
+      return ProduitCardDfComponent;
     }
   }
 
@@ -295,21 +301,39 @@ export class ProduitImmobilierDetailsComponent implements OnInit {
   fillComponent(type: string, componentRef: any, rang : number) {
     if (type === 'PINEL6') {
       this.fillComponentPinel(componentRef , this.dossier.resultatLoiPinel6DTO, 'Pinel de 6 ans', rang);
+      return;
     }
     if (type === 'PINEL9') {
       this.fillComponentPinel(componentRef , this.dossier.resultatLoiPinel9DTO, 'Pinel de 9 ans', rang);
+      return;
     }
     if (type === 'PINEL12') {
       this.fillComponentPinel(componentRef , this.dossier.resultatLoiPinel12DTO, 'Pinel de 12 ans', rang);
+      return;
     }
     if (type === 'LMNP_REEL') {
       this.fillComponentLmnp(componentRef , this.dossier.resultatLmnpReelDto, 'LMNP Reel', rang);
+      return;
     }
     if (type === 'LMNP_MICRO') {
       this.fillComponentLmnp(componentRef , this.dossier.resultatLmnpMicroDto, 'LMNP Micro', rang);
+      return;
     }
     if (type === 'BOUVARD') {
       this.fillComponentBouvard(componentRef , this.dossier.resultatBouvardDTO, rang);
+      return;
+    }
+    if (type === 'MH') {
+      this.fillComponentMH(componentRef , this.dossier.resultatMhDto, rang);
+      return;
+    }
+    if (type === 'MALRAUX') {
+      this.fillComponentMalraux(componentRef , this.dossier.resultatMalrauxDTO, rang);
+      return;
+    }
+    if (type === 'DEFICIT_FONCIER') {
+      this.fillComponentDF(componentRef , this.dossier.deficitFoncierDTO, rang);
+      return;
     }
   }
 
@@ -327,7 +351,25 @@ export class ProduitImmobilierDetailsComponent implements OnInit {
 
   fillComponentBouvard(componentRef: any, resultatBouvardDTO: ResultatBouvardDTO, rang : number) {
     componentRef.bouvard = resultatBouvardDTO;
-    componentRef.cardTitle = 'BOUVARD';
+    componentRef.cardTitle = 'Bouvard';
+    componentRef.rang = rang;
+  }
+
+  fillComponentMH(componentRef: any, resultatMhDTO: ResultatMhDTO, rang : number) {
+    componentRef.mh = resultatMhDTO;
+    componentRef.cardTitle = 'Monument Historique';
+    componentRef.rang = rang;
+  }
+
+  fillComponentMalraux(componentRef: any, resultatMalrauxDTODTO: ResultatMalrauxDTO, rang : number) {
+    componentRef.malraux = resultatMalrauxDTODTO;
+    componentRef.cardTitle = 'Malraux';
+    componentRef.rang = rang;
+  }
+
+  fillComponentDF(componentRef: any, deficitFoncierDTO: DeficitFoncierDTO, rang : number) {
+    componentRef.deficit = deficitFoncierDTO;
+    componentRef.cardTitle = 'Déficit Foncier';
     componentRef.rang = rang;
   }
 
