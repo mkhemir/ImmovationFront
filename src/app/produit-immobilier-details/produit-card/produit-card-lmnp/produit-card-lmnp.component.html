@@ -1,5 +1,5 @@
 <!--Card-->
-<div class="card card-cadre">
+<div class="card card-cadre" style="border-color: transparent">
 
   <div class="d-flex flex-row">
     <div class="justify-content-start d-inline-flex ml-3"><p class="card-title text-titre mt-2">{{rang}}.</p> <p class="card-title text-titre mt-2 ml-3"> {{cardTitle}}</p></div>
@@ -19,16 +19,16 @@
       <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{lmnp.mensualiteCredit}}</div>
     </div>
     <div class="d-flex flex-row">
-      <div class="justify-content-start d-inline-flex"><span class="dot_black mt-1"></span><p class="text-card-14 ml-2">TVA Récupérée</p></div>
-      <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ </div>
+      <div class="justify-content-start d-inline-flex"><span class="dot_black mt-1"></span><p class="text-card-14 ml-2">Amortissement immobilier</p></div>
+      <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{lmnp.amortissementMobilier /12}}</div>
     </div>
     <div class="d-flex flex-row">
-      <div class="justify-content-start d-inline-flex"><span class="dot_gold mt-1"></span><p class="text-card-14 ml-2">Total Economie d'impots</p></div>
-      <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{lmnp.economyImpots}}</div>
+      <div class="justify-content-start d-inline-flex"><span class="dot_gold mt-1"></span><p class="text-card-14 ml-2">Amortissement immobilier</p></div>
+      <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{lmnp.amortissementImmobilier / 12}}</div>
     </div>
     <div class="d-flex flex-row">
-      <div class="justify-content-start d-inline-flex"><span class="dot_gold mt-1"></span><p class="text-card-14 ml-2">Total Economie d'impots</p></div>
-      <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{lmnp.economyImpots}}</div>
+      <div class="justify-content-start d-inline-flex"><span class="dot_gold mt-1"></span><p class="text-card-14 ml-2">Loyer estimé</p></div>
+      <div class="flex-fill text-card-14 mr-4" style="text-align: right">€ {{lmnp.loyerAnnuel / 12}}</div>
     </div>
     <hr>
     <!--Text-->

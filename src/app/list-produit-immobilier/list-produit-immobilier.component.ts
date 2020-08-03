@@ -122,7 +122,7 @@ export class ListProduitImmobilierComponent implements OnInit, AfterViewInit, Af
     }
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResize() {
     console.log('onResize triggered');
     this.innersize = window.innerWidth;
@@ -169,7 +169,7 @@ export class ListProduitImmobilierComponent implements OnInit, AfterViewInit, Af
     }
   }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onWindowScroll() {
     this.innersize = window.innerWidth;
     if (this.innersize >= 768 && this.innersize < 992) {

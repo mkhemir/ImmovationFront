@@ -59,7 +59,7 @@ export class HomePageComponent implements OnInit, AfterViewInit {
     // tslint:disable-next-line: max-line-length
     search.prixMax = (this.searchFormGroup.get('prixMax').value === null || this.searchFormGroup.get('prixMax').value === '') ? 0 : this.searchFormGroup.get('prixMax').value;
     this.commonService.search = search;
-    this.router.navigate(['/listproduitimmobilier']);
+    this.router.navigate(['/listProduitImmobilier']);
   }
 
   ngAfterViewInit() {

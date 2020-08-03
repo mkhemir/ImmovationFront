@@ -11,8 +11,8 @@ import {DossierSimulationDTO} from "../models/dossier-simulation-dto";
 })
 export class ProduitImmobilierDetailsService {
 
+ // public PRODUIT_API = 'ec2-15-236-43-62.eu-west-3.compute.amazonaws.com:5555/api/audit/dossier';
   public PRODUIT_API = 'http://localhost:5555/api/audit/dossier';
-
   constructor(private http: HttpClient) {
   }
 

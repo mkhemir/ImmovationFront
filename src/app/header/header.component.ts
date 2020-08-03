@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   public size: number = document.documentElement.clientWidth;
   public innersize: number = window.innerWidth;
 
-    @HostListener('window:resize', ['$event'])
+    @HostListener('window:resize')
     onResize() {
       this.size = document.documentElement.clientWidth;
       this.innersize = window.innerWidth;

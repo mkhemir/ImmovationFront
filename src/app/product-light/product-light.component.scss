@@ -49,3 +49,9 @@
   color: #171717DE;
   opacity: 1;
 }
+
+.card-shadow {
+  -webkit-box-shadow: 7px 7px 12px 5px rgba(235,235,235,1);
+  -moz-box-shadow: 7px 7px 12px 5px rgba(235,235,235,1);
+  box-shadow: 7px 7px 12px 5px rgba(235,235,235,1);
+}

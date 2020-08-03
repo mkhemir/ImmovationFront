@@ -127,6 +127,15 @@
 	color: #BCBCBC;
 }
 
+.seach-text-light {
+  color: var(--unnamed-color-372300);
+  text-align: left;
+  font: Regular 16px/25px Poppins;
+  letter-spacing: 0px;
+  color: #372300;
+  opacity: 0.3;
+}
+
 .poppinsmedium12dieseECB605 {
 	font-family: Poppins;
 	font-weight: 500;
@@ -196,6 +205,7 @@
 	font-weight: 800;
 	font-size: 14px;
 	color: #372300;
+  opacity: 1;
 }
 
 .poppinsextrabold14dieseFFFFFFDE {

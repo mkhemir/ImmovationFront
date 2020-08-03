@@ -10,7 +10,8 @@ import {Injectable} from '@angular/core';
 })
 export class ListProduitImmobilierService {
 
-  public PRODUIT_API = '192.168.99.100:5555/api/produit/produits';
+  public PRODUIT_API = 'http://localhost:5555/api/produit/produits';
+  //public PRODUIT_API = 'http://ec2-15-236-43-62.eu-west-3.compute.amazonaws.com:5555/api/produit/produits';
 
   constructor(private http: HttpClient) {
   }
@@ -19,7 +20,7 @@ export class ListProduitImmobilierService {
     const headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
     headers.append('Access-Control-Allow-Origin: *', 'utf-8');
     const options = {headers};/*192.168.99.100*/
-    return this.http.post<Search>('http://localhost:5555/api/produit/produits', new Search(), options)
+    return this.http.post<Search>('http://localhost:5555/api/produit/produits', new Search(), options) // ec2-15-236-43-62.eu-west-3.compute.amazonaws.com
       .pipe(map((recherche: Search) => recherche.result as ProduitImmobilierDTO[]));
   }
 
